@@ -33,11 +33,15 @@ Wrocław 2013
 
 \section{Definicje}
 \begin{description}
-    \item[Kompilacja] (ang. \emph{compilation}) Proces automatycznego tłumaczenia kodu
-    źródłowego na kod maszynowy.
-    \item[Algorytm wzajemnego wykluczania] Metoda wymuszenia jednoczesnego dostępu do pamięci
-        wpsółdzielonej przez conajwyżej jeden wątek. Zobacz też: \emph{Zakleszczenie}.
-    \item[Zakleszczenie] Stan w którym dwa wątki lub procesy wzajemnie na siebie oczekują.
+    \item[Kompilacja] (ang. \emph{compilation}) Proces automatycznego tłumaczenia kodu źródłowego na kod maszynowy.
+    \item[Algorytm wzajemnego wykluczania] (ang. \emph{mutex}) Metoda wymuszenia jednoczesnego dostępu do pamięci współdzielonej przez conajwyżej jeden wątek. Zobacz też: \emph{Zakleszczenie}.
+    \item[Zakleszczenie] (ang. \emph{deadlock}) Stan w którym dwa wątki lub procesy wzajemnie na siebie oczekują.
+    \item[Zagłodzenie] (ang. \emph{starvation}) Stan w którym proces lub wątek nie może dokończyć działania z powodu braku dostępu do potrzebnych zasobów (najczęściej czasu procesora).
+    \item[Semafor] (ang. \emph{semaphore}) Abstrakcyjny typ danych chroniący dostępu do wspólnego zasobu w środowisku współbieżnym. Obsługuje dwie operacje: \texttt{wait} (czekaj na zasób) i \texttt{release} (zwolnij zasób).
+    \item[Proces] (ang. \emph{process}) Definiowana przez system operacyjny odosobniona jednostka wykonywania kodu. Zobacz też: \emph{wątek}.
+    \item[Wątek] (ang. \emph{thread}) Część programu wykonywana współbieżnie w ramach jednego procesu. W obrębie procesu może być wykonywanych wiele wątków.
+    \item[Analiza składniowa] (ang. \emph{parsing}) Proces analizy tekstu przeprowadzany w celu ustalenia jego struktury gramatycznej i zgodności z gramatyką języka.
+    \item[Kontekst wykonania] (ang. \emph{execution context}) Stan właściwy uruchomionemu procesowi. Składają się na niego m.in.bieżący stan rejestrów, stos, uchwyty operacji wejścia-wyjścia.
 \end{description}
 
 \end{document}
