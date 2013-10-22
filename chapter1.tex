@@ -1,4 +1,5 @@
-\documentclass[11pt]{article}
+% \documentclass[11pt]{article}
+\documentclass[12pt,leqno, twoside]{mwart}
 
 \usepackage[polish]{babel}
 \usepackage[margin=1.3in]{geometry}
@@ -10,6 +11,8 @@
 \setmonofont{Droid Sans Mono}
 \frenchspacing
 
+\renewcommand{\arraystretch}{1.5}
+
 \begin{document}
 
 \begin{titlepage}
@@ -17,46 +20,56 @@
 Studencka Pracownia Inżynierii Oprogramowania\\[6cm]
 
 Damian Bogel, Łukasz Dąbek\\[1cm]
-\textsc{\LARGE Kompilator Języka Gordon}\\
+\textsc{\LARGE Kompilator Języka Gordon}\\[0.5cm]
 \textsc{\large Podstawowe pojęcia i definicje}
 
 \vfill
-Wrocław 2013
+Wrocław 2013 \\[2.5cm]
 
 \end{center}
 \end{titlepage}
 
 \newpage
-% TODO: Changelog
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp.  & Data       & Nr wersji & Autor                 & Zmiana \\ \hline
+		1.   & 2013-10-22 & 0.01 & Łukasz Dąbek & Utworzenie dokumentu. \\ \hline
+        2.   & 2013-10-22 & 0.02 & Damian Bogel & Dodanie definicji. \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+
+\tableofcontents
 \setcounter{page}{2}
-~
+
 \newpage
 
 \section{Definicje}
-Podstawowe pojęcia używane w dokumentacji kompilatora języka Gordon:
+\noindent Podstawowe pojęcia używane w dokumentacji kompilatora języka Gordon:
+\\
 \begin{description}
-    \item[algorytm wzajemnego wykluczania] (ang. \emph{mutex}) -- metoda wymuszenia jednoczesnego dostępu do pamięci współdzielonej przez conajwyżej jeden wątek; zobacz też: \emph{zakleszczenie};
-    \item[analiza składniowa] (ang. \emph{parsing}) -- proces analizy tekstu przeprowadzany w celu ustalenia jego struktury gramatycznej i zgodności z gramatyką języka;
-    \item[debuger] (ang. \emph{debugger}) -- program służący do analizy działania programu i wykrywania błędów;
-    \item[kompilacja] (ang. \emph{compilation}) -- proces automatycznego tłumaczenia kodu źródłowego na kod maszynowy;
-    \item[konsolidator] (ang. linker)
-    \item[kontekst wykonania] (ang. \emph{execution context}) -- stan właściwy uruchomionemu procesowi; składają się na niego m.in. bieżący stan rejestrów, stos, uchwyty operacji wejścia-wyjścia;
-    \item[niezdefiniowane zachowanie] (ang. \emph{undefined behaviour})
-    \item[procedury wielobieżne] (ang. \emph{reentrant procedures}) -- procedury, których wykonywanie może być w pewnym momencie przerwane, a następnie bezpiecznie wywołane ponownie;
-    \item[proces] (ang. \emph{process}) -- definiowana przez system operacyjny odosobniona jednostka wykonywania kodu; zobacz też: \emph{wątek};
-    \item[program wielowątkowy] -- program korzystający z wielowątkowości systemu operacyjnego;
-    \item[przetwarzanie równoległe] (ang. \emph{parallel computing})
-    \item[przetwarzanie współbieżne] (ang. \emph{concurrent computing})
-    \item[semafor] (ang. \emph{semaphore}) -- abstrakcyjny typ danych chroniący dostępu do wspólnego zasobu w środowisku współbieżnym; obsługuje dwie operacje: \texttt{wait} (czekaj na zasób) i \texttt{release} (zwolnij zasób);
-    \item[synchronizacja] czynność polegająca na koordynowaniu dostępu do danych, które są dzielone między wątkami;
-    \item[transakcja] TODO
-    \item[unikanie zakleszczen] -- czynność polegająca na zmianie działania programu tak, aby nie dopuścić do zakleszczenia; zobacz też \emph{zakleszczenie}, \emph{wykrywanie zakleszczeń};
-    \item[wielowątkowość] (ang. \emph{multithreading}) -- cecha system operacyjnego pozwalająca na wykonywanie w ramach jednego procesu wielu wątków, często jednocześnie;
-    \item[wielozadaniowość] -- cecha systemu operacyjnego pozwalająca na wykonywanie więcej niż jednego zadania;
-    \item[wykrywanie zakleszczen] -- czynność polegająca na wykrywaniu sytuacji, w których doszło do zakleszczenia; zobacz też: \emph{zakleszczenie}, \emph{unikanie zakleszczeń};
-    \item[wątek] (ang. \emph{thread}) -- część programu wykonywana współbieżnie w ramach jednego procesu; w obrębie procesu może być wykonywanych wiele wątków;
-    \item[zagłodzenie] (ang. \emph{starvation}) -- stan w którym proces lub wątek nie może dokończyć działania z powodu braku dostępu do potrzebnych zasobów (najczęściej czasu procesora);
-    \item[zakleszczenie] (ang. \emph{deadlock}) -- stan w którym dwa wątki lub procesy wzajemnie na siebie oczekują.
+    \item[algorytm wzajemnego wykluczania] (ang. \emph{mutex}) -- metoda wymuszenia jednoczesnego dostępu do pamięci współdzielonej przez conajwyżej jeden wątek; zobacz też: \emph{zakleszczenie};\\
+    \item[analiza składniowa] (ang. \emph{parsing}) -- proces analizy tekstu przeprowadzany w celu ustalenia jego struktury gramatycznej i zgodności z gramatyką języka;\\
+    \item[debuger] (ang. \emph{debugger}) -- program służący do analizy działania programu i wykrywania błędów;\\
+    \item[kompilacja] (ang. \emph{compilation}) -- proces automatycznego tłumaczenia kodu źródłowego na kod maszynowy;\\
+    \item[kontekst wykonania] (ang. \emph{execution context}) -- stan właściwy uruchomionemu procesowi; składają się na niego m.in. bieżący stan rejestrów, stos, uchwyty operacji wejścia-wyjścia;\\
+    \item[procedury wielobieżne] (ang. \emph{reentrant procedures}) -- procedury, których wykonywanie może być w pewnym momencie przerwane, a następnie bezpiecznie wywołane ponownie;\\
+    \item[proces] (ang. \emph{process}) -- definiowana przez system operacyjny odosobniona jednostka wykonywania kodu wraz z zasobami do niej należącymi; zobacz też: \emph{wątek};\\
+    \item[program wielowątkowy] -- program korzystający z wielowątkowości systemu operacyjnego;\\
+    \item[semafor] (ang. \emph{semaphore}) -- abstrakcyjny typ danych chroniący dostęp do wspólnego zasobu w środowisku współbieżnym; obsługuje dwie operacje: \texttt{wait} (czekaj na zasób) i \texttt{release} (zwolnij zasób);\\
+    \item[synchronizacja] -- czynność polegająca na koordynowaniu dostępu do danych, które są dzielone między wątkami;\\
+\newpage
+    \item[transakcja, operacja atomowa] -- działanie, którego wynik powinien pozostać niezależny od pozostałych instrukcji, które działają w tym samym czasie; operacje takie wykonują się jako spójna całość; \\
+    \item[unikanie zakleszczen] -- czynność polegająca na zmianie działania programu tak, aby nie dopuścić do zakleszczenia; zobacz też \emph{zakleszczenie}, \emph{wykrywanie zakleszczeń};\\
+    \item[wielowątkowość] (ang. \emph{multithreading}) -- cecha system operacyjnego pozwalająca na wykonywanie w ramach jednego procesu wielu wątków, często jednocześnie;\\
+    \item[wielozadaniowość] -- cecha systemu operacyjnego pozwalająca na wykonywanie więcej niż jednego zadania;\\
+    \item[wykrywanie zakleszczen] -- czynność polegająca na wykrywaniu sytuacji, w których doszło do zakleszczenia; zobacz też: \emph{zakleszczenie}, \emph{unikanie zakleszczeń};\\
+    \item[wątek] (ang. \emph{thread}) -- część programu wykonywana współbieżnie w ramach jednego procesu; w obrębie procesu może być wykonywanych wiele wątków;\\
+    \item[zagłodzenie] (ang. \emph{starvation}) -- stan w którym proces lub wątek nie może dokończyć działania z powodu braku dostępu do potrzebnych zasobów (najczęściej czasu procesora);\\
+    \item[zakleszczenie] (ang. \emph{deadlock}) -- stan w którym dwa wątki lub procesy wzajemnie na siebie oczekują.\\
 \end{description}
 
 \end{document}
