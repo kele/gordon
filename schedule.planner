@@ -20,7 +20,7 @@
     </calendar>
   </calendars>
   <tasks>
-    <task id="1" name="Faza wst&#x119;pna" note="" work="518400" start="20131105T000000Z" end="20131128T170000Z" work-start="20131105T080000Z" percent-complete="37" priority="0" type="normal" scheduling="fixed-work">
+    <task id="1" name="Faza wst&#x119;pna" note="" work="518400" start="20131105T000000Z" end="20131128T170000Z" work-start="20131105T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <task id="2" name="Wst&#x119;pna idea projektu" note="" work="86400" start="20131105T000000Z" end="20131107T170000Z" work-start="20131105T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
       <task id="3" name="Przygotowanie dokumentu pocz&#x105;tkowego" note="" work="144000" start="20131107T170000Z" end="20131114T170000Z" work-start="20131108T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
