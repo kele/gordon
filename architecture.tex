@@ -39,7 +39,7 @@ w trakcie implementacji pewne szczegóły mogą ulec zmianie, to główna idea p
 niezmieniona.
 
 \section{Opis ogólnej architektury kompilatora}
-\noindent Kompilator języka \textsc{Gordon} będzie przetwarzał plik wejściowy w następujących fazach:
+\noindent Kompilator języka \textsc{Gordon} przetwarza plik wejściowy w następujących fazach:
 \begin{itemize}
     \item analiza leksykalna,
     \item analiza składniowa,
@@ -51,12 +51,12 @@ niezmieniona.
 \end{itemize}
 
 \subsection{Analiza leksykalna}
-\noindent Kod leksera zostanie wygenerowany przy użyciu narzędzia \textsc{Flex}. Nietypową
-częścią leksera będzie uwzględnianie wcięć w kodzie jako symboli znaczących z racji tego,
+\noindent Kod leksera jest generowany przy użyciu narzędzia \textsc{Flex}. Nietypową
+częścią leksera jest uwzględnianie wcięć w kodzie jako symboli znaczących z racji tego,
 że struktura blokowa języka \textsc{Gordon} jest zdefiniowana przez poziomy wcięć.
 
 \subsection{Analiza składniowa}
-\noindent Kod analizatora składniowego zostanie wygenerowany przy użyciu narzędzia \textsc{Bison}.
+\noindent Kod analizatora składniowego jest generowany przy użyciu narzędzia \textsc{Bison}.
 Wynikiem działania modułu jest abstrakcyjne drzewo wyrażenia reprezentujące program wejściowy.
 Następne fazy modyfikują to drzewo lub uzupełniają je o dodatkowe informacje.
 
@@ -70,7 +70,7 @@ Przy wykryciu martwego kodu zostanie wypisane stosowne ostrzeżenie dla programi
 
 \subsection{Wykrywanie zakleszczeń}
 \noindent Moduł służący do wykrywania zakleszczeń jest najbardziej skomplikowaną częścią projektu
-kompilatora języka \textsc{Gordon}. W przypadku, gdy kompilator nie będzie w stanie wywnioskować
+kompilatora języka \textsc{Gordon}. W przypadku, gdy kompilator nie jest w stanie wywnioskować
 braku zakleszczeń w kompilowanym programie programiście zostanie zgłoszony błąd (domyślna opcja)
 lub ostrzeżenie.
 
@@ -78,17 +78,16 @@ Dodatkowo, gdy moduł wykryje możliwość zakleszczenia, w niektórych przypadk
 zostanie przedstawiony możliwy ślad wykonania prowadzący do zakleszczenia. 
 
 \subsection{Optymalizacja}
-\noindent Optymalizacje wykonywane przez kompilator będą korzystały z dodatkowych informacji
+\noindent Optymalizacje wykonywane przez kompilator korzystają z dodatkowych informacji
 niesionych przez typy języka \textsc{Gordon}, które są bardziej ekspresywne niż typy języka
 wynikowego.
 Optymalizacje niskopoziomowe (czyli korzystające ze szczegółów architektury docelowej) nie
-zostaną zaimplementowane w module optymalizatora -- zadanie to zostanie oddelegowane do
-kompilatora języka \textsc{C}.
+są częścią modułu optymalizatora -- zadanie to zostanie oddelegowane do kompilatora języka \textsc{C}.
 
 \subsection{Generacja kodu wynikowego}
-\noindent Generacja kodu wynikowego jest ostatnią fazą kompilacji. Podczaj tej fazy zostaną
-usunięte nadmiarowe informacje o typach a następnie zostanie wykonane tłumaczenie kodu
-do kodu języka \textsc{C} gotowego do dalszej kompilacji np. przy pomocy pakietu \textsc{GCC}.
+\noindent Generacja kodu wynikowego jest ostatnią fazą kompilacji. Podczaj tej fazy usuwane są
+nadmiarowe informacje o typach a następnie wykonywane jest tłumaczenie kodu do kodu języka
+\textsc{C} gotowego do dalszej kompilacji np. przy pomocy pakietu \textsc{GCC}.
 
 \section{Kwestie implementacyjne}
 \noindent Kompilator języka \textsc{Gordon} zostanie napisany w języku \textsc{OCaml}. W celu
