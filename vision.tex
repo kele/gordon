@@ -50,12 +50,13 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
 \textsc{Gordon} jest kompilatorem, który ma wspomagać pracę programisty w wykrywaniu zakleszczeń i innych problemów związanych z programowaniem wielowątkowym. Od użytkowników nie wymaga się, aby znali formalne metody dowodzenia takich własności programów. Wszelkie komunikaty przedstawiane przez kompilator \textsc{Gordon} będą abstrahować od szczegółów implementacyjnych tego narzędzia.
 
 \subsection{Potrzeby użytkowników}
+\noindent Podstawowymi potrzebami użytkowników kompilatora \textsc{Gordon} są:
 \begin{itemize}
-\item Wsparcie dla podstawowych technik programowania wielowątkowego
-\item Wykrywanie potencjalnych zakleszczeń
-\item Czytelne i zwięzłe komunikaty
-\item Prosty język
-\item Licencja pozwalająca na szerokie wykorzystywanie
+\item wsparcie dla podstawowych technik programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
+\item wykrywanie potencjalnych zakleszczeń,
+\item czytelne i zwięzłe komunikaty,
+\item prosty język,
+\item licencja pozwalająca na szerokie wykorzystywanie.
 \end{itemize}
 
 \section{Opis programu}
@@ -74,10 +75,10 @@ TODO: kompilator nie wymaga duzej dokumentacji, ale na pewno specyf jezyka bedzi
 
 \section{Wymagania}
 \subsection{Wymagania systemowe}
-\noindent System oparty na jądrze Linux udostępniający interfejs pthreads.
+\noindent System oparty na jądrze \textsc{Linux} udostępniający interfejs \textsc{pthreads}.
 
 \subsection{Wymagania sprzętowe}
-\noindent Brak.
+\noindent Takie same jak na uruchomienie dowolnego systemu opartego na jądrze \textsc{Linux}.
 
 \subsection{Wymagania wydajnościowe}
 \noindent Wykrywanie zakleszczeń odbywa się na poziomie analizy kodu źrodłowego, nie w trakcie wykonania programu. W związku z tym, nie powstaje żaden narzut wydajnościowy. Różnice między czasami wykonania programu napisanego w C, a kodem wygenerowanym przez kompilator \textsc{Gordon} powinny być niezauważalne (poniżej 2\%).
