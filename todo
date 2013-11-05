@@ -1,4 +1,5 @@
-- architektura
 - zalozenia ogolne
+	- wykrywanie zakleszczen
+	- dodatkowe typy (reference counting, mutexed)
 - kosztorys
-- harmonogram
+

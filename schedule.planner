@@ -33,86 +33,123 @@
         </predecessors>
       </task>
     </task>
-    <task id="5" name="Budowa" note="" work="5702400" start="20131128T170000Z" end="20140513T170000Z" work-start="20131129T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="5" name="Budowa" note="" work="4118400" start="20131128T170000Z" end="20140122T170000Z" work-start="20131129T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <predecessors>
         <predecessor id="1" predecessor-id="1" type="FS"/>
       </predecessors>
-      <task id="6" name="Tworzenie wst&#x119;pnej wersji leksera" note="" work="144000" start="20131128T170000Z" end="20131205T170000Z" work-start="20131129T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
-      <task id="7" name="Tworzenie wst&#x119;pnej wersji parsera" note="" work="144000" start="20131205T170000Z" end="20131212T170000Z" work-start="20131206T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="6" name="Tworzenie wst&#x119;pnej wersji leksera" note="" work="86400" start="20131128T170000Z" end="20131203T170000Z" work-start="20131129T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="7" name="Tworzenie wst&#x119;pnej wersji parsera" note="" work="86400" start="20131203T170000Z" end="20131206T170000Z" work-start="20131204T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="6" type="FS"/>
         </predecessors>
       </task>
-      <task id="8" name="Tworzenie wst&#x119;pnej wersji generatora kodu" note="" work="288000" start="20131212T170000Z" end="20131226T170000Z" work-start="20131213T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="8" name="Tworzenie wst&#x119;pnej wersji generatora kodu" note="" work="144000" start="20131206T170000Z" end="20131213T170000Z" work-start="20131209T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="7" type="FS"/>
         </predecessors>
       </task>
-      <task id="9" name="Ustalanie zgodno&#x15B;ci wst&#x119;pnej wersji kompilatora ze specyfikacj&#x105;" note="" work="86400" start="20131226T170000Z" end="20131231T170000Z" work-start="20131227T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="9" name="Ustalanie zgodno&#x15B;ci wst&#x119;pnej wersji kompilatora ze specyfikacj&#x105;" note="" work="86400" start="20131213T170000Z" end="20131218T170000Z" work-start="20131216T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="8" type="FS"/>
         </predecessors>
       </task>
-      <task id="10" name="Testowanie" note="" work="144000" start="20131231T170000Z" end="20140107T170000Z" work-start="20140101T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="10" name="Testowanie" note="" work="86400" start="20131218T170000Z" end="20131223T170000Z" work-start="20131219T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="9" type="FS"/>
         </predecessors>
       </task>
-      <task id="11" name="Tworzenie aplikacji testowej" note="" work="1440000" start="20140107T170000Z" end="20140318T170000Z" work-start="20140108T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="11" name="Tworzenie dokumentacji u&#x17C;ytkownika" note="" work="288000" start="20131223T170000Z" end="20140106T170000Z" work-start="20131224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="10" type="FS"/>
         </predecessors>
       </task>
-      <task id="12" name="Wst&#x119;pna wersja kompilatora uko&#x144;czona" note="" work="0" start="20140107T170000Z" end="20140107T170000Z" work-start="20140107T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+      <task id="12" name="Tworzenie aplikacji testowej" note="" work="720000" start="20131218T170000Z" end="20140122T170000Z" work-start="20131219T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="9" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="13" name="Wst&#x119;pna wersja kompilatora uko&#x144;czona" note="" work="0" start="20131223T170000Z" end="20131223T170000Z" work-start="20131223T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="10" type="FS"/>
         </predecessors>
       </task>
-      <task id="13" name="Ko&#x144;cowe prace nad implementacj&#x105; leksera, parsera i generatora kodu" note="" work="864000" start="20140107T170000Z" end="20140218T170000Z" work-start="20140108T080000Z" percent-complete="8" priority="0" type="normal" scheduling="fixed-work">
+      <task id="14" name="Tworzenie modu&#x142;u sygnalizuj&#x105;cego b&#x142;&#x119;dy" note="" work="432000" start="20131223T170000Z" end="20140113T170000Z" work-start="20131224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="12" type="FS"/>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
         </predecessors>
       </task>
-      <task id="14" name="Tworzenie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do inferencji i sprawdzania typ&#xF3;w (SprawdzatorTyposci)" note="" work="432000" start="20140107T170000Z" end="20140128T170000Z" work-start="20140108T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
-        <predecessors>
-          <predecessor id="1" predecessor-id="12" type="FS"/>
-        </predecessors>
-      </task>
-      <task id="15" name="Tworzenie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do eliminacji martwego kodu (detrupizator)" note="" work="288000" start="20140128T170000Z" end="20140211T170000Z" work-start="20140129T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="15" name="Modu&#x142; sygnalizuj&#x105;cy b&#x142;&#x119;dy uko&#x144;czony" note="" work="0" start="20140113T170000Z" end="20140113T170000Z" work-start="20140113T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="14" type="FS"/>
         </predecessors>
       </task>
-      <task id="16" name="Testowanie (SprawdzatorTyposci, SprawdzatorMartwosci)" note="" work="144000" start="20140211T170000Z" end="20140218T170000Z" work-start="20140212T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="16" name="Ko&#x144;cowe prace nad implementacj&#x105; leksera, parsera i generatora kodu" note="" work="576000" start="20131223T170000Z" end="20140120T170000Z" work-start="20131224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="15" type="FS"/>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
         </predecessors>
       </task>
-      <task id="17" name="Tworzenie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do wykrywania zakleszcze&#x144; (lockcheck)" note="" work="720000" start="20140218T170000Z" end="20140325T170000Z" work-start="20140219T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="17" name="Lekser, parser oraz modu&#x142; slu&#x17C;&#x105;cy do generowania kodu uko&#x144;czone" note="" work="0" start="20140120T170000Z" end="20140120T170000Z" work-start="20140120T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="16" type="FS"/>
         </predecessors>
       </task>
-      <task id="18" name="Testowanie (lockcheck)" note="" work="288000" start="20140325T170000Z" end="20140408T170000Z" work-start="20140326T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="18" name="Tworzenie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do inferencji i sprawdzania typ&#xF3;w (SprawdzatorTyposci)" note="" work="288000" start="20131223T170000Z" end="20140106T170000Z" work-start="20131224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="17" type="FS"/>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
         </predecessors>
       </task>
-      <task id="19" name="Tworzeie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do optymalizacji (opter)" note="" work="576000" start="20140408T170000Z" end="20140506T170000Z" work-start="20140409T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="19" name="Tworzenie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do eliminacji martwego kodu (detrupizator)" note="" work="172800" start="20131223T170000Z" end="20131231T170000Z" work-start="20131224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
-          <predecessor id="1" predecessor-id="18" type="FS"/>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
         </predecessors>
       </task>
-      <task id="20" name="Testowanie (opter)" note="" work="144000" start="20140506T170000Z" end="20140513T170000Z" work-start="20140507T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+      <task id="20" name="Testowanie (SprawdzatorTyposci, SprawdzatorMartwosci)" note="" work="144000" start="20131231T170000Z" end="20140107T170000Z" work-start="20140101T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
         <predecessors>
           <predecessor id="1" predecessor-id="19" type="FS"/>
         </predecessors>
       </task>
+      <task id="21" name="Modu&#x142;y s&#x142;u&#x17C;&#x105;ce do inferencji i sprawdzania typ&#xF3;w oraz eliminacji martwego kodu uko&#x144;czony" note="" work="0" start="20140107T170000Z" end="20140107T170000Z" work-start="20140107T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="18" type="FS"/>
+          <predecessor id="1" predecessor-id="20" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="22" name="Tworzenie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do wykrywania zakleszcze&#x144; (lockcheck)" note="" work="432000" start="20131223T170000Z" end="20140113T170000Z" work-start="20131224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="23" name="Testowanie (lockcheck)" note="" work="144000" start="20140113T170000Z" end="20140120T170000Z" work-start="20140114T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="22" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="24" name="Modu&#x142; s&#x142;u&#x17C;&#x105;cy do wykrywania zakleszcze&#x144; uko&#x144;czony" note="" work="0" start="20140120T170000Z" end="20140120T170000Z" work-start="20140120T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="23" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="25" name="Tworzeie modu&#x142;u s&#x142;u&#x17C;&#x105;cego do optymalizacji (opter)" note="" work="288000" start="20131223T170000Z" end="20140106T170000Z" work-start="20131224T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="13" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="26" name="Testowanie (opter)" note="" work="144000" start="20140106T170000Z" end="20140113T170000Z" work-start="20140107T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="25" type="FS"/>
+        </predecessors>
+      </task>
+      <task id="27" name="Modu&#x142; s&#x142;u&#x17C;&#x105;cy do optymalizacji uko&#x144;czony" note="" work="0" start="20140113T170000Z" end="20140113T170000Z" work-start="20140113T170000Z" percent-complete="0" priority="0" type="milestone" scheduling="fixed-work">
+        <predecessors>
+          <predecessor id="1" predecessor-id="26" type="FS"/>
+        </predecessors>
+      </task>
     </task>
-    <task id="21" name="Testowanie" note="" work="288000" start="20140513T170000Z" end="20140527T170000Z" work-start="20140514T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="28" name="Przekazanie projektu" note="" work="144000" start="20140122T170000Z" end="20140129T170000Z" work-start="20140123T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <predecessors>
         <predecessor id="1" predecessor-id="5" type="FS"/>
       </predecessors>
+      <task id="29" name="Testowanie" note="" work="144000" start="20140122T170000Z" end="20140129T170000Z" work-start="20140123T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
     </task>
   </tasks>
   <resource-groups/>
