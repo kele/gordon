@@ -6,9 +6,6 @@
 \usepackage{polski}
 \usepackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont{Verdana}
-\setsansfont{Verdana}
-\setmonofont{Droid Sans Mono}
 \frenchspacing
 
 \renewcommand{\arraystretch}{1.5}

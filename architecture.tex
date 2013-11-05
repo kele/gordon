@@ -1,0 +1,74 @@
+\documentclass{documentation}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+Studencka Pracownia Inżynierii Oprogramowania\\
+Instytutu Informatyki Uniwersytetu Wrocìawskiego\\[6cm]
+
+Damian Bogel, Łukasz Dąbek\\[1cm]
+\textsc{\LARGE Kompilator Języka Gordon}\\[0.5cm]
+\textsc{\large Architektura kompilatora}
+
+\vfill
+Wrocław 2013 \\[2.5cm]
+
+\end{center}
+\end{titlepage}
+
+\newpage
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp.  & Data       & Nr wersji & Autor                 & Zmiana \\ \hline
+		1.   & 2013-10-22 & 0.01 & Łukasz Dąbek & Utworzenie dokumentu \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+
+\tableofcontents
+\setcounter{page}{2}
+
+\newpage
+
+\section{Wstęp}
+Niniejszy dokument nakreśla architekturę kompilatora języka \textsc{Gordon}. Mimo, że
+w trakcie implementacji pewne szczegóły mogą ulec zmianie, to główna idea pozostanie
+niezmieniona.
+
+\section{Opis ogólnej architektury kompilatora}
+Kompilator języka \textsc{Gordon} będzie przetwarzał plik wejściowy w następujących fazach:
+\begin{itemize}
+    \item analiza leksykalna,
+    \item analiza składniowa,
+    \item inferencja i sprawdzanie typów,
+    \item eliminacja martwego kodu,
+    \item wykrywanie zakleszczeń
+    \item optymalizacja,
+    \item generacja kodu wynikowego.
+\end{itemize}
+
+\subsection{Analiza leksykalna}
+Kod leksera zostanie wygenerowany przy użyciu narzędzia \textsc{Flex}.
+
+\subsection{Analiza składniowa}
+Kod analizatora składniowego zostanie wygenerowany przy użyciu narzędzia \textsc{Bison}.
+
+\subsection{Inferencja i sprawdzanie typów}
+System typów języka Gordon jest oparty na teorii typów Hindleya-Millnera.
+
+\subsection{Eliminacja martwego kodu}
+Zostanią użyte kraty.
+
+\subsection{Wykrywanie zakleszczeń}
+Będzie.
+
+\subsection{Optymalizacja}
+Będą optymalizacje.
+
+\subsection{Generacja kody wynikowego}
+Do C.
+
+\end{document}
