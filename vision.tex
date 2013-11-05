@@ -68,8 +68,16 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
     \item rozproszonym oprogramowaniu bazodanowym,
     \item systemach czasu rzeczywistego.
 \end{itemize}
+
 \subsection{Pozycja na rynku}
-TODO: mozna wspomniec o jakichs systemach dowodzenia, i ze nikt ich nie zna poza DaBim, Spławskim, Jedynakiem i Sznurkiem
+W chwili projektowania kompilatora języka \textsc{Gordon} na rynku dominowały następujące metody wytwarzania szybkiego i niezawodnego oprogramowania współbieżnego:
+\begin{itemize}
+    \item {\emph Metoda wprawnego programisty} -- napisanie programu zleca się wprawnemu programiście języka \textsc{C}.
+    \item {\emph Metoda formalisty} -- wybierając model teoretyczny maszyny odtwarzamy wybrany program z tego formalnej specyfikacji.
+    \item {\emph Software transactional memory} -- wykorzystanie techniki programowania, która nie wykorzystuje muteksów, więc nie występują zakleszczenia.
+\end{itemize}
+
+Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem wspierającym tworzenie bezpiecznego oprogramowania współbieżnego.
 
 \section{Cechy programu}
 \noindent Podstawowymi cechami języka \textsc{Gordon} są:
