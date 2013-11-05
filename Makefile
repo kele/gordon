@@ -7,6 +7,9 @@ architecture.pdf : architecture.tex documentation.cls
 vision.pdf : vision.tex documentation.cls
 	xelatex vision.tex && xelatex vision.tex
 
+costs.pdf : costs.tex documentation.cls
+	xelatex costs.tex && xelatex costs.tex
+
 clean :
 	-rm *.aux *.log *.nav *.out *.snm *.pdf *.toc *.vrb
 
