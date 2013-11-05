@@ -1,5 +1,4 @@
-- zalozenia ogolne
-	- wykrywanie zakleszczen
-	- dodatkowe typy (reference counting, mutexed)
-- kosztorys
-
+- dokonczyc zalozenia ogolne
+- poprawic "programowanie wielowatkowe" na "programowanie wspolbiezne"
+- "final touches"
+- drukowanko (kele)
