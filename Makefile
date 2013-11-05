@@ -10,6 +10,9 @@ vision.pdf : vision.tex documentation.cls
 costs.pdf : costs.tex documentation.cls
 	xelatex costs.tex && xelatex costs.tex
 
+schedule.pdf : schedule.tex documentation.cls
+	xelatex schedule.tex && xelatex schedule.tex
+
 clean :
 	-rm *.aux *.log *.nav *.out *.snm *.pdf *.toc *.vrb
 
