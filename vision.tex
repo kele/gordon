@@ -72,16 +72,36 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
 TODO: mozna wspomniec o jakichs systemach dowodzenia, i ze nikt ich nie zna poza DaBim, Spławskim, Jedynakiem i Sznurkiem
 
 \section{Cechy programu}
-TODO: nie wiem co tutaj wpisac
+\noindent Podstawowymi cechami języka \textsc{Gordon} są:
+\begin{itemize}
+\item imperatywność,
+\item składnia wzorowana na języku \textsc{Haskell},
+\item silne, statyczne typowanie z inferencją typów,
+\item konstrukcje pozwalające na wsparcie podstawowych technik programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
+\item wykrywanie zakleszczeń na podstawie statycznej analizy kodu,
+\item przenośność.
+\end{itemize}
 
 \section{Dokumentacja}
 \subsection{Specyfikacja języka \textsc{Gordon}}
+\noindent Specyfikacja języka zawiera:
+\begin{itemize}
+\item gramatykę języka,
+\item opis typów oraz systemu typowania,
+\item semantykę konstrukcji używanych w języku,
+\item niezbędne szczegóły implementacyjne, które muszą być zachowane niezależnie od docelowej architektury.
+\end{itemize}
+
 \subsection{Specyfikacja kompilatora \textsc{Gordon}}
-TODO: kompilator nie wymaga duzej dokumentacji, ale na pewno specyf jezyka bedzie trza
+\noindent Specyfikacja kompilatora zawiera:
+\begin{itemize}
+\item opis wejścia i wyjścia,
+\item opis dostępnych opcji kompilatora.
+\end{itemize}
 
 \section{Wymagania}
 \subsection{Wymagania systemowe}
-\noindent System oparty na jądrze \textsc{Linux} udostępniający interfejs \textsc{pthreads}.
+\noindent System oparty na jądrze \textsc{Linux} udostępniający interfejs \textsc{pthreads} oraz kompilator języka C.
 
 \subsection{Wymagania sprzętowe}
 \noindent Takie same jak na uruchomienie dowolnego systemu opartego na jądrze \textsc{Linux}.
@@ -90,6 +110,6 @@ TODO: kompilator nie wymaga duzej dokumentacji, ale na pewno specyf jezyka bedzi
 \noindent Wykrywanie zakleszczeń odbywa się na poziomie analizy kodu źrodłowego, nie w trakcie wykonania programu. W związku z tym, nie powstaje żaden narzut wydajnościowy. Różnice między czasami wykonania programu napisanego w C, a kodem wygenerowanym przez kompilator \textsc{Gordon} powinny być niezauważalne (poniżej 2\%).
 
 \section{Licencja}
-TODO: GPL?
+\noindent Kompilator języka \textsc{Gordon} jest objęty licencją GPL w wersji trzeciej. Jej pełna treść jest dostępna w oddzielnym dokumencie.
 
 \end{document}
