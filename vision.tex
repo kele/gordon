@@ -68,14 +68,19 @@ TODO: mozna wspomniec o jakichs systemach dowodzenia, i ze nikt ich nie zna poza
 TODO: nie wiem co tutaj wpisac
 
 \section{Dokumentacja}
+\subsection{Specyfikacja języka \textsc{Gordon}}
+\subsection{Specyfikacja kompilatora \textsc{Gordon}}
 TODO: kompilator nie wymaga duzej dokumentacji, ale na pewno specyf jezyka bedzie trza
 
 \section{Wymagania}
+\subsection{Wymagania systemowe}
+\noindent System oparty na jądrze Linux udostępniający interfejs pthreads.
+
 \subsection{Wymagania sprzętowe}
-TODO: no ma smigac wszedzie tam gdzie C :))
+\noindent Brak.
 
 \subsection{Wymagania wydajnościowe}
-TODO: ma byc szybko, bo nie po to cisniemy paralelizm zeby bylo wolno
+\noindent Wykrywanie zakleszczeń odbywa się na poziomie analizy kodu źrodłowego, nie w trakcie wykonania programu. W związku z tym, nie powstaje żaden narzut wydajnościowy. Różnice między czasami wykonania programu napisanego w C, a kodem wygenerowanym przez kompilator \textsc{Gordon} powinny być niezauważalne (poniżej 2\%).
 
 \section{Licencja}
 TODO: GPL?
