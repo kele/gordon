@@ -1,4 +1,4 @@
-chapter1.pdf : chapter1.tex
+chapter1.pdf : chapter1.tex documentation.cls
 	xelatex chapter1.tex && xelatex chapter1.tex
 
 clean :
