@@ -52,8 +52,8 @@ niezmieniona.
 
 \subsection{Analiza leksykalna}
 \noindent Kod leksera jest generowany przy użyciu narzędzia \textsc{Flex}. Nietypową
-częścią leksera jest uwzględnianie wcięć w kodzie jako symboli znaczących z racji tego,
-że struktura blokowa języka \textsc{Gordon} jest zdefiniowana przez poziomy wcięć.
+częścią leksera jest uwzględnianie białych znaków w kodzie źródłowym jako symboli znaczących,
+z racji tego, że struktura blokowa języka \textsc{Gordon} jest zdefiniowana przez poziomy wcięć.
 
 \subsection{Analiza składniowa}
 \noindent Kod analizatora składniowego jest generowany przy użyciu narzędzia \textsc{Bison}.
@@ -61,7 +61,11 @@ Wynikiem działania modułu jest abstrakcyjne drzewo wyrażenia reprezentujące 
 Następne fazy modyfikują to drzewo lub uzupełniają je o dodatkowe informacje.
 
 \subsection{Inferencja i sprawdzanie typów}
-\noindent System typów języka Gordon jest oparty na teorii typów Hindleya-Millnera. 
+\noindent Ponieważ język \textsc{Gordon} nie wymaga od programisty podawania typów wszystkich
+zmiennych w kodzie źródłowym, potrzebny jest moduł inferencji typów, który na podstawie
+programu odtwarza najogólniejszy typ danej zmiennej. Po udanej inferencji moduł sprawdzający
+dokonuje sprawdzenia poprawności adnotacji typowych względem rzeczywistego użycia zmiennych
+w programie.
 
 \subsection{Eliminacja martwego kodu}
 \noindent Moduł służący do eliminacji martwego kodu służy do zmniejszenia rozmiaru pliku wynikowego
