@@ -34,12 +34,12 @@ Wrocław 2013 \\[2.5cm]
 \newpage
 
 \section{Wstęp}
-Niniejszy dokument nakreśla architekturę kompilatora języka \textsc{Gordon}. Mimo, że
+\noindent Niniejszy dokument nakreśla architekturę kompilatora języka \textsc{Gordon}. Mimo, że
 w trakcie implementacji pewne szczegóły mogą ulec zmianie, to główna idea pozostanie
 niezmieniona.
 
 \section{Opis ogólnej architektury kompilatora}
-Kompilator języka \textsc{Gordon} będzie przetwarzał plik wejściowy w następujących fazach:
+\noindent Kompilator języka \textsc{Gordon} będzie przetwarzał plik wejściowy w następujących fazach:
 \begin{itemize}
     \item analiza leksykalna,
     \item analiza składniowa,
@@ -51,24 +51,49 @@ Kompilator języka \textsc{Gordon} będzie przetwarzał plik wejściowy w nastę
 \end{itemize}
 
 \subsection{Analiza leksykalna}
-Kod leksera zostanie wygenerowany przy użyciu narzędzia \textsc{Flex}.
+\noindent Kod leksera zostanie wygenerowany przy użyciu narzędzia \textsc{Flex}.
 
 \subsection{Analiza składniowa}
-Kod analizatora składniowego zostanie wygenerowany przy użyciu narzędzia \textsc{Bison}.
+\noindent Kod analizatora składniowego zostanie wygenerowany przy użyciu narzędzia \textsc{Bison}.
 
 \subsection{Inferencja i sprawdzanie typów}
-System typów języka Gordon jest oparty na teorii typów Hindleya-Millnera.
+\noindent System typów języka Gordon jest oparty na teorii typów Hindleya-Millnera.
 
 \subsection{Eliminacja martwego kodu}
-Zostanią użyte kraty.
+\noindent Zostanią użyte kraty.
 
 \subsection{Wykrywanie zakleszczeń}
-Będzie.
+\noindent Będzie.
 
 \subsection{Optymalizacja}
-Będą optymalizacje.
+\noindent Będą optymalizacje.
 
 \subsection{Generacja kody wynikowego}
-Do C.
+\noindent Do C.
+
+\section{Kwestie implementacyjne}
+\noindent Kompilator języka \textsc{Gordon} zostanie napisany w języku \textsc{OCaml}.
+
+\section{Motywacja decyzji architektonicznych}
+\subsection{Wybór języka programowania}
+\noindent Dojrzałość języka \textsc{OCaml}, w połączeniu z jego silnym systemem typów,
+czyni go doskonałym wyborem do implementacji kompilatora. Dzięki tej
+decyzji możliwe jest zmniejszenie liczby błędów w kodzie dzięki statycznemu
+wymuszaniu niezmienników na poziomie typów.
+
+\subsection{Wybór języka docelowego}
+\noindent Język \textsc{C} został wybrany jako język docelowy kompilacji z kilku względów:
+\begin{itemize}
+    \item dostępność kompilatorów języka \textsc{C} na wielu platformach,
+    \item możliwość wykorzystania instniejących, sprawdzonych narzędzi (konsolidatory,
+        optymalizatory).
+\end{itemize}
+
+\subsection{Podział kompilacji na fazy}
+\noindent Dzięki podziałowi kompilacji na fazy zyskujemy:
+\begin{itemize}
+    \item modularyzację kodu, a dzięki temu możliwość łatwej rozbudowy,
+    \item łatwość oddzielnego testowania faz.
+\end{itemize}
 
 \end{document}
