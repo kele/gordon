@@ -4,6 +4,9 @@ chapter1.pdf : chapter1.tex documentation.cls
 architecture.pdf : architecture.tex documentation.cls
 	xelatex architecture.tex && xelatex architecture.tex
 
+vision.pdf : vision.tex documentation.cls
+	xelatex vision.tex && xelatex vision.tex
+
 clean :
 	-rm *.aux *.log *.nav *.out *.snm *.pdf *.toc *.vrb
 

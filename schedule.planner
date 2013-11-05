@@ -145,11 +145,12 @@
         </predecessors>
       </task>
     </task>
-    <task id="28" name="Przekazanie projektu" note="" work="144000" start="20140122T170000Z" end="20140129T170000Z" work-start="20140123T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
+    <task id="28" name="Przekazanie projektu" note="" work="172800" start="20140122T170000Z" end="20140129T170000Z" work-start="20140123T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work">
       <predecessors>
         <predecessor id="1" predecessor-id="5" type="FS"/>
       </predecessors>
       <task id="29" name="Testowanie" note="" work="144000" start="20140122T170000Z" end="20140129T170000Z" work-start="20140123T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
+      <task id="30" name="Oddanie projektu zleceniodawcy" note="" work="28800" start="20140122T170000Z" end="20140123T170000Z" work-start="20140123T080000Z" percent-complete="0" priority="0" type="normal" scheduling="fixed-work"/>
     </task>
   </tasks>
   <resource-groups/>
