@@ -43,16 +43,16 @@ Wrocław 2013 \\[2.5cm]
 Celem \textsc{Gordona} jest ułatwienie pracy programistom tworzącym oprogramowanie współbieżne. Ponieważ praktyka pokazuje, że napisanie poprawnego programu współbieżnego (tj. wolnego od zakleszczeń, zagłodzenia) jest zadaniem trudnym, projekt \textsc{Gordon} uwzględnia szereg usprawnień wspomagających programistę. Usprawnienia te znajdują się zarówno w samej konstrukcji języka, jak i w statycznej analizie kodu będącej częścią kompilatora.
 \section{Grupa docelowa}
 \subsection{Opis użytkowników}
-\noindent Użytkownikami kompilatora \textsc{Gordon} są programiści, którzy tworzą oprogramowanie współbieżne. Są oni zaznajomieni z takimi pojęciami jak wzajemne wykluczanie czy zagłodzenie.
+\noindent Użytkownikami kompilatora \textsc{Gordon} są programiści, którzy tworzą oprogramowanie współbieżne. Są oni zaznajomieni z takimi pojęciami, jak wzajemne wykluczanie lub zagłodzenie.
 
-Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego języka programowania. Ze względu na prostotę języka \textsc{Gordon}, można się go nauczyć w niezwykle krótkim czasie. Pozwoli to na korzystanie z kompilatora bez potrzeby wcześniejszych drogich i czasochłonnych szkoleń.
+Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego języka programowania. Ze względu na prostotę języka \textsc{Gordon}, można się go nauczyć w bardzo krótkim czasie. Pozwoli to na korzystanie z kompilatora bez potrzeby wcześniejszych drogich i czasochłonnych szkoleń.
 
-\textsc{Gordon} jest kompilatorem, który ma wspomagać pracę programisty w wykrywaniu zakleszczeń i innych problemów związanych z programowaniem współbieżnym. Od użytkowników nie wymaga się, aby znali formalne metody dowodzenia takich własności programów. Wszelkie komunikaty przedstawiane przez kompilator \textsc{Gordon} będą abstrahować od szczegółów implementacyjnych tego narzędzia.
+\textsc{Gordon} jest kompilatorem, który ma wspomagać pracę programisty w wykrywaniu zakleszczeń i innych problemów związanych z programowaniem współbieżnym. Od użytkowników nie wymaga się, aby znali formalne metody wykrywania wymienionych zagrożeń. Wszelkie komunikaty przedstawiane przez kompilator \textsc{Gordon} będą abstrahować od szczegółów implementacyjnych tego narzędzia.
 
 \subsection{Potrzeby użytkowników}
 \noindent Podstawowymi potrzebami użytkowników kompilatora \textsc{Gordon} są:
 \begin{itemize}
-\item wsparcie dla podstawowych technik programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
+\item wspomaganie podstawowych technik programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
 \item wykrywanie potencjalnych zakleszczeń,
 \item czytelne i zwięzłe komunikaty,
 \item prosty język,
@@ -65,7 +65,7 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
 \textsc{Gordon} został opracowany z myślą o:
 \begin{itemize}
     \item oprogramowaniu medycznym,
-    \item rozproszonym oprogramowaniu bazodanowym,
+    \item rozproszonym oprogramowaniu baz danych,
     \item systemach czasu rzeczywistego.
 \end{itemize}
 
@@ -73,19 +73,19 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
 \noindent W chwili projektowania kompilatora języka \textsc{Gordon} na rynku dominowały następujące metody wytwarzania szybkiego i niezawodnego oprogramowania współbieżnego:
 \begin{itemize}
     \item \emph{Metoda wprawnego programisty} -- napisanie programu zleca się wprawnemu programiście języka \textsc{C}.
-    \item \emph{Metoda formalisty} -- posiadając model teoretyczny maszyny odtwarzamy program z jego formalnej specyfikacji.
-    \item \emph{Pamięć transakcyjna} -- wykorzystanie techniki programowania, która nie wykorzystuje muteksów pozwala na uniknięcie zakleszczeń.
+    \item \emph{Metoda formalisty} -- dysponując modelem teoretycznym, maszyny odtwarzamy program z jego formalnej specyfikacji.
+    \item \emph{Pamięć transakcyjna} -- zastosowanie techniki programowania, która nie korzysta z muteksów i umożliwia unikanie zakleszczeń.
 \end{itemize}
 ~\\
-Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem wspierającym tworzenie bezpiecznego oprogramowania współbieżnego.
+Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem tworzenia bezpiecznego oprogramowania współbieżnego.
 
 \section{Cechy programu}
 \noindent Podstawowymi cechami języka \textsc{Gordon} są:
 \begin{itemize}
 \item imperatywność,
 \item składnia wzorowana na języku Haskell,
-\item silne, statyczne typowanie z inferencją typów,
-\item konstrukcje pozwalające na wsparcie podstawowych technik programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
+\item silne typy, statyczne wnioskowanie o typach,
+\item podstawowe konstrukcje programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
 \item wykrywanie zakleszczeń na podstawie statycznej analizy kodu,
 \item generowanie kodu w języku C,
 \item przenośność.
@@ -113,12 +113,12 @@ Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem wspierając
 \noindent System oparty na jądrze \textsc{Linux} udostępniający interfejs \textsc{pthreads} oraz kompilator języka C.
 
 \subsection{Wymagania sprzętowe}
-\noindent Takie same jak na uruchomienie dowolnego systemu opartego na jądrze \textsc{Linux}.
+\noindent Takie same jak w wypadku dowolnego systemu opartego na jądrze \textsc{Linux}. TODO: dodaj odsyłacz.
 
 \subsection{Wymagania wydajnościowe}
 \noindent Wykrywanie zakleszczeń odbywa się na poziomie analizy kodu źródłowego, nie w trakcie wykonania programu. W związku z tym, nie powstaje żaden narzut wydajnościowy. Różnice między czasami wykonania programu napisanego w C, a kodem wygenerowanym przez kompilator \textsc{Gordon} powinny być niezauważalne (poniżej 2\%).
 
 \section{Licencja}
-\noindent Kompilator języka \textsc{Gordon} jest objęty licencją GPL w wersji trzeciej. Jej pełna treść jest dostępna w oddzielnym dokumencie.
+\noindent Kompilator języka \textsc{Gordon} jest objęty licencją GPL w wersji trzeciej. Jej pełna treść jest dostępna w oddzielnym dokumencie. TODO: odsyłacz.
 
 \end{document}
