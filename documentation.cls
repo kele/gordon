@@ -10,4 +10,8 @@
 \frenchspacing
 
 \renewcommand{\arraystretch}{1.5}
+\renewcommand{\labelitemi}{}
+\renewcommand{\labelitemii}{}
+\renewcommand{\labelitemiii}{}
+\renewcommand{\labelitemiv}{}
 
