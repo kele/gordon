@@ -5,6 +5,7 @@
 \usepackage[margin=1.3in]{geometry}
 \usepackage{polski}
 \usepackage{fontspec}
+\usepackage{caption}
 \defaultfontfeatures{Mapping=tex-text}
 \frenchspacing
 
