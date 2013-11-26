@@ -34,50 +34,54 @@ Wrocław 2013 \\[2.5cm]
 \newpage
 
 \section{Wstęp}
-\noindent Niniejszy dokument nakreśla architekturę kompilatora języka \textsc{Gordon}. Mimo, że
-w trakcie implementacji pewne szczegóły mogą ulec zmianie, to główna idea pozostanie
+\noindent Niniejszy dokument określi architekturę kompilatora języka \textsc{Gordon}. Mimo, że
+w trakcie implementacji pewne szczegóły mogą ulec zmianie, główna idea pozostanie
 niezmieniona.
 
 \section{Opis ogólnej architektury kompilatora}
 \noindent Kompilator języka \textsc{Gordon} przetwarza plik wejściowy w następujących fazach:
 \begin{itemize}
     \item analiza leksykalna i składniowa[G],
-    \item inferencja i sprawdzanie typów [O1],
+    \item wnioskowanie o typach [O1],
     \item eliminacja martwego kodu [R],
     \item wykrywanie zakleszczeń [D], 
     \item optymalizacja [O2],
-    \item generacja kodu wynikowego [N].
+    \item generowanie kodu wynikowego [N].
 \end{itemize}
 W nawiasach kwadratowych podano nazwy poszczególnych modułów.
 
 \subsection{Analiza leksykalna [G]}
-\noindent Kod leksera jest generowany przy użyciu narzędzia \textsc{Flex}. Nietypową
-częścią leksera jest uwzględnianie białych znaków w kodzie źródłowym jako symboli znaczących,
-z racji tego, że struktura blokowa języka \textsc{Gordon} jest zdefiniowana przez poziomy wcięć.
+\noindent Kod analizatora leksykalnego jest generowany przy użyciu narzędzia \textsc{Flex}. Nietypową
+częścią leksera jest uwzględnianie znaków niewidocznych w kodzie źródłowym jako
+symboli znaczących, ponieważ struktura blokowa języka \textsc{Gordon} jest
+zdefiniowana przez poziomy wcięć.  
 
 \subsection{Analiza składniowa [G]}
-\noindent Kod analizatora składniowego jest generowany przy użyciu narzędzia \textsc{Bison}.
-Wynikiem działania modułu jest abstrakcyjne drzewo wyrażenia reprezentujące program wejściowy.
-Następne fazy modyfikują to drzewo lub uzupełniają je o dodatkowe informacje.
+\noindent Kod analizatora składniowego jest generowany przy użyciu narzędzia
+\textsc{Bison}.  Wynikiem działania modułu jest abstrakcyjne drzewo wyrażenia
+reprezentujące program wejściowy.  Następne fazy modyfikują to drzewo lub
+uzupełniają je o dodatkowe informacje.
 
 \subsection{Inferencja i sprawdzanie typów [O1]}
-\noindent Ponieważ język \textsc{Gordon} nie wymaga od programisty podawania typów wszystkich
-zmiennych w kodzie źródłowym, potrzebny jest moduł inferencji typów, który na podstawie
-programu odtwarza najogólniejszy typ danej zmiennej. Po udanej inferencji, moduł sprawdzający
-dokonuje sprawdzenia poprawności adnotacji typowych względem rzeczywistego użycia zmiennych
-w programie.
+\noindent Ponieważ język \textsc{Gordon} nie wymaga od programisty podawania
+typów wszystkich zmiennych w kodzie źródłowym, potrzebny jest moduł
+wnioskowania o typach, który na podstawie programu odtwarza najogólniejszy typ
+danej zmiennej. Następnie sprawdzana jest poprawność adnotacji dotyczących
+typów względem rzeczywistego użycia zmiennych w programie.
 
 \subsection{Eliminacja martwego kodu [R]}
 \noindent Moduł służący do eliminacji martwego kodu służy do zmniejszenia rozmiaru pliku wynikowego
-poprzez usunięcie kodu, który nie jest wywoływany przez główną ścieżkę wykonania programu.
-Przy wykryciu martwego kodu zostanie wypisane stosowne ostrzeżenie dla programisty.
+przez usunięcie kodu, który nie jest wywoływany w toku wykonania programu.
+Po wykryciu martwego kodu zostanie wypisane stosowne ostrzeżenie dla programisty.
 
-\subsection{Wykrywanie zakleszczeń [D]}
-\noindent Moduł służący do wykrywania zakleszczeń jest najbardziej skomplikowaną częścią projektu
-kompilatora języka \textsc{Gordon}. W przypadku, gdy kompilator nie jest w stanie stwierdzić obecności lub braku zakleszczeń w kompilowanym programie, zostanie zgłoszony błąd (domyślna opcja)
-lub ostrzeżenie.
+\subsection{Wykrywanie zakleszczeń [D]} \noindent Moduł służący do wykrywania
+zakleszczeń jest najbardziej skomplikowaną częścią projektu kompilatora języka
+\textsc{Gordon}. Gdy kompilator nie jest w stanie stwierdzić
+obecności lub braku zakleszczeń w kompilowanym programie, zostanie zgłoszony
+błąd (domyślnie) lub ostrzeżenie.
 
-Dodatkowo, gdy moduł wykryje możliwość zakleszczenia, w niektórych przypadkach zostanie przedstawiony możliwy ślad wykonania prowadzący do zakleszczenia. 
+Dodatkowo, gdy moduł wykryje możliwość zakleszczenia, w niektórych przypadkach
+zostanie przedstawiony możliwy ślad wykonania prowadzący do zakleszczenia. 
 
 \subsection{Optymalizacja [O]}
 \noindent Optymalizacje wykonywane przez kompilator korzystają z dodatkowych informacji
@@ -87,21 +91,22 @@ Optymalizacje niskopoziomowe (czyli korzystające ze szczegółów architektury 
 są częścią modułu optymalizatora -- zadanie to zostanie oddelegowane do kompilatora języka \textsc{C}.
 
 \subsection{Generowanie kodu wynikowego [N]}
-\noindent Generowanie kodu wynikowego jest ostatnią fazą kompilacji. Podczas tej fazy usuwane są
+\noindent Generowanie kodu wynikowego jest ostatnią fazą kompilacji. Podczas tej
+fazy są usuwane
 nadmiarowe informacje o typach, a następnie wykonywane jest tłumaczenie do kodu języka
-\textsc{C} gotowego do dalszej kompilacji, np. przy pomocy pakietu \textsc{GCC}.
+\textsc{C}, gotowego do dalszej kompilacji, np. za pomocą pakietu \textsc{GCC}.
 
 \section{Kwestie implementacyjne}
 \noindent Kompilator języka \textsc{Gordon} jest napisany w języku \textsc{OCaml}. W celu
-zmniejszenia czasu implementacji w projekcie zostały użyte darmowe biblioteki i programy o otwartym
-kodzie źródłowym, takie jak: \textsc{Bison}, \textsc{Flex}, \textsc{make}.
+zmniejszenia czasu implementacji w projekcie zostały użyte bezpłatne biblioteki i programy o otwartym
+kodzie źródłowym, takie jak: \textsc{Bison}, \textsc{Flex} i \textsc{make}.
 
 \section{Motywacja decyzji architektonicznych}
 \subsection{Wybór języka programowania}
 \noindent Dojrzałość języka \textsc{OCaml}, w połączeniu z jego silnym systemem typów,
-czyni go doskonałym wyborem do implementacji kompilatora. Dzięki tej
-decyzji możliwe jest zmniejszenie liczby błędów w kodzie dzięki statycznemu
-wymuszaniu niezmienników na poziomie typów.
+sprawia, że doskonale nadaje się do implementacji kompilatora. Dzięki tej
+decyzji możliwe jest zmniejszenie liczby błędów w kodzie korzystając ze
+statycznego wymuszania niezmienników na poziomie typów.
 
 \subsection{Wybór języka docelowego}
 \noindent Język \textsc{C} został wybrany jako język docelowy kompilacji z kilku względów:
@@ -112,9 +117,9 @@ wymuszaniu niezmienników na poziomie typów.
 \end{itemize}
 
 \subsection{Podział kompilacji na fazy}
-\noindent Dzięki podziałowi kompilacji na fazy zyskujemy:
+\noindent Zysk z podziału kompilacji na fazy:
 \begin{itemize}
-    \item modularyzację kodu, a dzięki temu możliwość łatwej rozbudowy,
+    \item modularyzacja kodu, a dzięki temu możliwość łatwej rozbudowy,
     \item łatwość oddzielnego testowania faz.
 \end{itemize}
 
