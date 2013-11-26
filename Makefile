@@ -16,6 +16,9 @@ schedule.pdf : schedule.tex documentation.cls
 usecases.pdf : usecases.tex documentation.cls
 	xelatex usecases.tex && xelatex usecases.tex
 
+tests.pdf : tests.tex documentation.cls
+	xelatex tests.tex && xelatex tests.tex
+
 clean :
 	-rm *.aux *.log *.nav *.out *.snm *.pdf *.toc *.vrb
 

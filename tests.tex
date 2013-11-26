@@ -1,0 +1,91 @@
+\documentclass{documentation}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+Studencka Pracownia Inżynierii Oprogramowania\\
+Instytutu Informatyki Uniwersytetu Wrocławskiego\\[6cm]
+
+Damian Bogel, Łukasz Dąbek\\[1cm]
+\textsc{\LARGE Kompilator Języka Gordon}\\[0.5cm]
+\textsc{\large Testy}
+
+\vfill
+Wrocław 2013 \\[2.5cm]
+
+\end{center}
+\end{titlepage}
+
+\newpage
+\begin{table}
+	\centering
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp.  & Data       & Nr wersji & Autor                 & Zmiana \\ \hline
+		1.   & 2013-11-25 & 0.01 & Damian Bogel & Utworzenie dokumentu \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+
+\tableofcontents
+\setcounter{page}{2}
+
+\newpage
+
+\section{Wstęp}
+\noindent Dokument ten zawiera plan testowania kompilatora języka
+\textsc{Gordon}.
+
+\section{Uwagi ogólne}
+\noindent Każdy programista zostaje zobowiązany do napisania testów
+jednostkowych pokrywających jego część pracy. Każdy z testów znajduje sie w
+oddzielnym podkatalogu katalogu \emph{tests}. Testy jednostkowe są w pełni
+zautomatyzowane. Po ukończeniu każdej z faz, program zostaje sprawdzony przy
+ich użyciu.
+
+\section{Główny program testujący}
+\noindent Równolegle z implementacją kompilatora, tworzony jest główny program
+testowy, w którym użyte zostają wszystkie konstrukcje języka \textsc{Gordon}.
+Jego objętość i złożoność jest wystarczająco duża, aby mógł być potraktowany
+jako wyznacznik poprawności implementacji kompilatora. Powstaje on w iteracjach,
+co umożliwia testowanie jego poszczególnych wersji. Niedopuszczalne są
+jakiekolwiek (nawet najmniejsze) niezgodności tego programu ze specyfikacją.
+
+\section{Testy analizatora leksykalnego i analizatora składniowego [G]}
+\noindent Przygotowanych zostaje kilkanaście programów, w których użyte
+zostają wszystkie konstrukcje języka \textsc{Gordon}. W tej fazie dopuszczalne
+są także kody źródłowe, w których wnioskowanie o typach nie może się powieść.
+Moduł [G] musi je jednak przyjąć jako poprawne wejście.
+
+\section{Testy modułu wnioskującego o typach [O1]}
+\noindent Projekt kompilatora \textsc{Gordon} zostaje zapisany jako
+odpowiadający mu zbiór typów. W trakcie implementacji powinien się on zmieniać
+razem z architekturą kompilatora, za każdym razem skutkując poprawnym
+wnioskowaniem o typach.
+
+\section{Testy modułu eliminującego martwy kod [R]}
+\noindent Przygotowanych zostaje kilkanaście małych programów, w których celowo
+zostaje umieszczony kod, który nigdy się nie wykona. Moduł [R] powinien
+wyeliminować taki kod.
+
+\section{Testy modułu wykrywającego zakleszczenia [D]}
+\noindent Prototypy istniejącego wolnego oprogramowania korzystającego z
+wielowątkowości zostają utworzone w języku \textsc{Gordon} i przekazane do
+modułu [D]. Każde wykryte zakleszczenie zostaje wnikliwie sprawdzone przez
+programistów, celem ustalenia poprawności działania modułu.
+
+Oprócz tego, zostaje utworzonych kilka programów, o których wiadomo, że może w
+nich wystąpić zakleszczenie. Moduł [D] powinien wykryć każde z nich.
+
+\section{Testy modułu optymalizującego [O2]}
+\noindent Wszystkie testy jednostkowe oraz główny program testowy są sprawdzane
+pod kątem zgodności ich wersji przed i po optymalizacji. Przez zgodność rozumie
+się to samo wejście, wyjście oraz liczbę wykrytych zakleszczeń.
+
+\section{Generowanie kodu wynikowego [N]}
+\noindent Kod wynikowy w języku \textsc{C} kompilowany jest przy użyciu
+\textsc{GCC} w wersji 4.7.3 z użyciem flag \textsc{-Wall}, \textsc{-Wextra} oraz
+\textsc{-O0} lub \textsc{-O2} w celu sprawdzenia poprawności.
+
+\end{document}
