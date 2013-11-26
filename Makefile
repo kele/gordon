@@ -13,6 +13,9 @@ costs.pdf : costs.tex documentation.cls
 schedule.pdf : schedule.tex documentation.cls
 	xelatex schedule.tex && xelatex schedule.tex
 
+usecases.pdf : usecases.tex documentation.cls
+	xelatex usecases.tex && xelatex usecases.tex
+
 clean :
 	-rm *.aux *.log *.nav *.out *.snm *.pdf *.toc *.vrb
 
