@@ -39,9 +39,25 @@ języka \textsc{Gordon}. Analiza ta pozwoli na łatwiejsze weryfikowanie wymaga�
 stawianych produktowi w fazach specyfikacji, implementacji oraz testowania.
 
 \section{Analiza przypadków użycia}
-\subsection{Kompilacja programu}
 \begin{itemize}
-    \item Uruchomienie kompilatora z argumentem będącym ścieżką do pliku źródłowego.
+    \item Kompilacja programu z pliku źródłowego do kodu maszynowego.
+    \item Podgląd wygenerowanego kodu pośredniego w języku \textsc{C}.
+    \item Sprawdzenie poprawności typów w programie.
+    \item Sprawdzenie poprawności składniowej programu.
+    \item Odczyt informacji modułu optymalizatora (dotyczących wykonanych optymalizacji).
+    \item Sprawdzenie możliwości występowania zakleszczeń w programie (wraz z informacją
+        o śladzie wykonania prowadzącym do potencjalnego zakleszczenia).
+    \item Odczyt informacji o usuniętym martwym kodzie. 
 \end{itemize}
+
+\section{Komentarz}
+\noindent Kompilator języka \textsc{Gordon}, jako produkt przeznaczony dla programistów, jest
+obsługiwany inaczej niż standardowe aplikacje z graficznym interfejsem użytkownika. Kompilator
+jest nie programem interaktywnym -- po uruchomieniu kompilatora z odpowiednimi argumentami
+następuje wypisanie odpowiedzi na ekran (m.in. informacji o sukcesie lub porażce) i zakończenie
+programu.
+
+Z tego powodu każdy przypadek użycia jest jednokrokowy -- wymusza to sama natura obsługi
+kompilatora.
 
 \end{document}
