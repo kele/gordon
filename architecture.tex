@@ -25,6 +25,7 @@ Wrocław 2013 \\[2.5cm]
 		\hline
 		Lp.  & Data       & Nr wersji & Autor                 & Zmiana \\ \hline
 		1.   & 2013-10-22 & 0.01 & Łukasz Dąbek & Utworzenie dokumentu \\ \hline
+		2.   & 2013-11-22 & 0.02 & Damian Bogel & Korekta \\ \hline
 	\end{tabular}
 \end{table}
 \newpage
@@ -42,7 +43,7 @@ niezmieniona.
 \section{Opis ogólnej architektury kompilatora}
 \noindent Kompilator języka \textsc{Gordon} przetwarza plik wejściowy w następujących fazach:
 \begin{itemize}
-    \item analiza leksykalna i składniowa[G],
+    \item analiza leksykalna i składniowa [G],
     \item wnioskowanie o typach [O1],
     \item eliminacja martwego kodu [R],
     \item wykrywanie zakleszczeń [D], 
@@ -71,7 +72,7 @@ danej zmiennej. Następnie sprawdzana jest poprawność adnotacji dotyczących
 typów względem rzeczywistego użycia zmiennych w programie.
 
 \subsection{Eliminacja martwego kodu [R]}
-\noindent Moduł służący do eliminacji martwego kodu służy do zmniejszenia rozmiaru pliku wynikowego
+\noindent Moduł eliminający martwy kod służy do zmniejszenia rozmiaru pliku wynikowego
 przez usunięcie kodu, który nie jest wywoływany w toku wykonania programu.
 Po wykryciu martwego kodu zostanie wypisane stosowne ostrzeżenie dla programisty.
 
@@ -117,6 +118,7 @@ statycznego wymuszania niezmienników na poziomie typów.
         optymalizatory).
 \end{itemize}
 
+\pagebreak
 \subsection{Podział kompilacji na fazy}
 \noindent Zysk z podziału kompilacji na fazy:
 \begin{itemize}

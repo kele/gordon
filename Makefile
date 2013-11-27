@@ -1,3 +1,5 @@
+all: architecture.pdf dictionary.pdf vision.pdf costs.pdf schedule.pdf usecases.pdf tests.pdf
+
 dictionary.pdf : dictionary.tex documentation.cls
 	xelatex dictionary.tex && xelatex dictionary.tex
 
