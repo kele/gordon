@@ -1,0 +1,64 @@
+program ::= list(decl)
+
+decl_keyword ::= let | letshared | letatomic
+
+decl ::=
+    | decl_keyword ident list(ident) = body
+    | type uppercase_ident = 
+        list constr
+
+constr ::=
+    uppercase_ident list(field)
+
+field ::=
+    uppercase_ident ident
+
+body ::= list expr
+
+expr ::=
+    | ident <- exp
+    | ident := exp
+    | if expr then expr else expr
+    | if expr then expr
+    | while expr do expr
+    | lock body unlock
+    | lock ident
+    | unlock ident
+    | rlock body runlock
+    | rlock ident
+    | runlock ident
+    | wlock body wunlock
+    | wlock ident
+    | wunlock ident
+    | for ident in expr to expr do body
+    | let ident = expr
+    | go body
+    | call
+    | break
+    | continue
+    | literal
+
+call ::=
+    ident list(expr)
+
+prim_type ::=
+    | Int 
+    | Bool 
+    | Char 
+    | Array type num
+    | Ptr type 
+    | Func list(type) -> type
+
+
+let sieve n =
+    let x = Array Bool n    // ZEROED
+
+    lock
+    for i = 2; i < n; i++ do
+        if not x[i] then
+            go
+                for j = 2*i; j < n; j += i do
+                    x[j] = True
+    unlock
+
+
