@@ -1,0 +1,99 @@
+\documentclass{documentation}
+\usepackage{syntax}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+Studencka Pracownia Inżynierii Oprogramowania\\
+Instytutu Informatyki Uniwersytetu Wrocławskiego\\[6cm]
+
+Damian Bogel, Łukasz Dąbek\\[1cm]
+\textsc{\LARGE Kompilator Języka Gordon}\\[0.5cm]
+\textsc{\large Opis języka}
+
+\vfill
+Wrocław 2013 \\[2.5cm]
+
+\end{center}
+\end{titlepage}
+
+\newpage
+\begin{table}
+	\centering
+    \captionsetup{name=Tabela}
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp.  & Data       & Nr wersji & Autor                 & Zmiana \\ \hline
+		1.   & 2014-01-05 & 0.01 & Damian Bogel & Utworzenie dokumentu \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+
+\tableofcontents
+\setcounter{page}{2}
+
+\newpage
+
+\section{Ogólna charakterystyka języka}
+
+\section{Gramatyka języka}
+\begin{grammar}
+
+<program> ::= <decl-list>
+
+
+
+<decl> ::= <decl-keyword> <ident> <ident-list> `=' <body>
+\alt <type> <uppercase-ident> `=' 
+\alt <const-list>
+
+<decl-keyword> ::= `let'
+\alt `letshared'
+\alt `letatomic'
+
+<constr> ::= <uppercase-ident> <field-list>
+
+<field> ::= <uppercase-ident> <ident>
+
+<body> ::= <expr-list>
+
+<expr> ::= <ident> `:=' <expr>
+\alt `if' <expr> `then' <expr> `else' <expr>
+\alt `if' <expr> then <expr>
+\alt `while' <expr> `do' <expr>
+\alt `lock' <body> `unlock'
+\alt `lock' <ident>
+\alt `unlock' <ident>
+\alt `rlock' <body> `runlock'
+\alt `rlock' <ident>
+\alt `runlock' <ident>
+\alt `wlock' <body> `wunlock'
+\alt `wlock' <ident>
+\alt `wunlock' <ident>
+\alt `for' <ident> `in' <expr> `to' <expr> `do' <body>
+\alt `let' <ident> `=' <expr>
+\alt `go' <body>
+\alt `call'
+\alt `break'
+\alt `continue'
+\alt <literal>
+
+<call> ::= <ident> <expr-list>
+
+<prim-type> ::= `Int'
+\alt `Bool'
+\alt `Char'
+\alt `Array' <type> <positive-num>
+\alt `Ptr' <type>
+\alt `Func' <type-list> `-\>' <type>
+
+% TODO: lists, literal
+<decl-list> ::= <decl> | <decl>`,' <decl-list>
+
+\end{grammar}
+
+
+\section{Opisy konstrukcji językowych}
+
+\end{document}
