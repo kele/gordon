@@ -123,4 +123,15 @@ while true do
   if x == 0 then break
 \end{verbatim}
 
+\subsection{Uruchamianie wątków}
+W nowym wątku można uruchomić dowolne wyrażenie poprzedzając je słowem kluczowym
+\texttt{go}. W poniższym przykładzie wartość zmiennej \texttt{x} może być
+zarówno 2 jak i 3:
+
+\begin{verbatim}
+let x = 0
+go (x := 2)
+go (x := 3)
+\end{verbatim}
+
 \end{document}
