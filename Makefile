@@ -1,4 +1,4 @@
-all: architecture.pdf dictionary.pdf vision.pdf costs.pdf schedule.pdf usecases.pdf tests.pdf language.pdf kele_language.pdf index.pdf
+all: architecture.pdf dictionary.pdf vision.pdf costs.pdf schedule.pdf usecases.pdf tests.pdf language.pdf kele_language.pdf index.pdf grammar.pdf
 
 dictionary.pdf : dictionary.tex documentation.cls
 	xelatex dictionary.tex && xelatex dictionary.tex
@@ -26,6 +26,9 @@ language.pdf : language.tex documentation.cls
 
 index.pdf : index.tex documentation.cls
 	xelatex index.tex && xelatex index.tex
+
+grammar.pdf : grammar.tex documentation.cls
+	xelatex grammar.tex && xelatex grammar.tex
 
 kele_language.pdf : kele_language.tex documentation.cls
 	xelatex kele_language.tex && xelatex kele_language.tex

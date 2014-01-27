@@ -1,0 +1,110 @@
+\documentclass{documentation}
+\usepackage{syntax}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+Studencka Pracownia Inżynierii Oprogramowania\\
+Instytutu Informatyki Uniwersytetu Wrocławskiego\\[6cm]
+
+Damian Bogel, Łukasz Dąbek\\[1cm]
+\textsc{\LARGE Kompilator Języka Gordon}\\[0.5cm]
+\textsc{\large Gramatyka języka}
+
+\vfill
+Wrocław 2014 \\[2.5cm]
+
+\end{center}
+\end{titlepage}
+
+\newpage
+\begin{table}
+	\centering
+    \captionsetup{name=Tabela}
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp.  & Data       & Nr wersji & Autor                 & Zmiana \\ \hline
+		1.   & 2014-01-09 & 0.01 & Łukasz Dąbek & Utworzenie dokumentu \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+
+\tableofcontents
+\setcounter{page}{2}
+
+\newpage
+
+\section{Wstęp}
+Gramatykę języka \textsc{Gordon} prezentujemy w formacie BFN\footnote{\emph{Backus-Naur Form}}.
+Poniższa gramatyka będzie podstawą do implementacji modułu analizy składniowej i leksykalnej.
+
+\section{Gramatyka języka}
+\begin{grammar}
+
+<program> ::= <decl-list>
+
+<decl> ::= <decl-keyword> <ident> <ident-list> `=' <body>
+\alt <type> <uppercase-ident> `=' 
+\alt <const-list>
+
+<decl-keyword> ::= `let' \alt `letatomic'
+
+<constr> ::= <uppercase-ident> <field-list>
+
+<field> ::= <uppercase-ident> <ident>
+
+<body> ::= <expr-list>
+
+<expr> ::= <ident> `:=' <expr>
+\alt `if' <expr> `then' <expr> `else' <expr>
+\alt `if' <expr> then <expr>
+\alt `while' <expr> `do' <expr>
+\alt `lock' <body> `unlock'
+\alt `lock' <ident>
+\alt `unlock' <ident>
+\alt `rlock' <body> `runlock'
+\alt `rlock' <ident>
+\alt `runlock' <ident>
+\alt `wlock' <body> `wunlock'
+\alt `wlock' <ident>
+\alt `wunlock' <ident>
+\alt `for' <ident> `in' <expr> `to' <expr> `do' <body>
+\alt `let' <ident> `=' <expr>
+\alt `go' <body>
+\alt `call' <ident> <arg-list>
+\alt `break'
+\alt `continue'
+\alt <literal>
+
+<prim-type> ::= `Int'
+\alt `Bool'
+\alt `Char'
+\alt `Array' <type> <positive-num>
+\alt `Ptr' <type>
+\alt `Func' <type-list> `-\>' <type>
+
+<arg-list> ::= <expr>
+\alt <expr> <arg-list>
+
+<decl-list> ::= <decl>
+\alt <decl>`,' <decl-list>
+
+<expr-list> ::= <expr>
+\alt <expr>`,' <expr-list>
+
+<field-list> ::= <field>
+\alt <field>`,' <field-list>
+
+<type-list> ::= <type>
+\alt <type>`,' <type-list>
+
+<literal> ::= literał (liczbowy, znakowy lub napisowy) występujący w języku C
+
+<ident> ::= ciąg cyfr oraz małych i wielkich liter alfabetu łacińskiego, zaczynający się literą
+
+<uppercase-ident> ::= <ident> zaczynający się wielką literą
+
+\end{grammar}
+
+\end{document}
