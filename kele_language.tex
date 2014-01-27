@@ -42,8 +42,6 @@ Wrocław 2013 \\[2.5cm]
 
 <program> ::= <decl-list>
 
-
-
 <decl> ::= <decl-keyword> <ident> <ident-list> `=' <body>
 \alt <type> <uppercase-ident> `=' 
 \alt <const-list>
@@ -74,7 +72,7 @@ Wrocław 2013 \\[2.5cm]
 \alt `for' <ident> `in' <expr> `to' <expr> `do' <body>
 \alt `let' <ident> `=' <expr>
 \alt `go' <body>
-\alt `call'
+\alt `call' <ident> <arg-list>
 \alt `break'
 \alt `continue'
 \alt <literal>
@@ -88,11 +86,28 @@ Wrocław 2013 \\[2.5cm]
 \alt `Ptr' <type>
 \alt `Func' <type-list> `-\>' <type>
 
-% TODO: lists, literal
-<decl-list> ::= <decl> | <decl>`,' <decl-list>
+<arg-list> ::= <arg>
+\alt <arg> <arg-list>
+
+<decl-list> ::= <decl>
+\alt <decl>`,' <decl-list>
+
+<expr-list> ::= <expr>
+\alt <expr>`,' <expr-list>
+
+<field-list> ::= <field>
+\alt <field>`,' <field-list>
+
+<type-list> ::= <type>
+\alt <type>`,' <type-list>
+
+<literal> ::= dowolny literał występujący w języku C
+
+<ident> ::= ciąg cyfr oraz małych i wielkich liter alfabetu łacińskiego, zaczynający się literą
+
+<uppercase-ident> ::= <ident> zaczynający się wielką literą
 
 \end{grammar}
-
 
 \section{Opisy konstrukcji językowych}
 
