@@ -37,15 +37,17 @@ Wrocław 2014 \\[2.5cm]
 
 \section{Przykłady}
 \noindent W kolejnych podrozdziałach przedstawione zostały przykładowe programy
-napisane w języku \textsc{Gordon}.
+napisane w~ języku \textsc{Gordon}.
 
-\subsection{Liczby fibonacciego}
+\subsection{Liczby Fibonacciego}
 \noindent Poniższy program przedstawia funkcję, która oblicza czterdziestą
 liczbę Fibonacciego.
 
 \begin{verbatim}
 let fib n = 
-    fib (n - 1) + fib (n - 2)
+    if n = 1
+    then 1
+    else fib (n - 1) + fib (n - 2)
 
 fib 40
 \end{verbatim}
@@ -63,10 +65,7 @@ go (x := 3)
 
 \subsection{Problem producentów i konsumentów}
 \noindent Rozwiązanie klasycznego problemu za pomocą mechanizmów synchronizacji
-oferowanych przez język \textsc{Gordon}. Funkcje \texttt{try\_read} oraz
-\texttt{try\_write} są zadeklarowane jako atomowe. Oznacza to, że ich argumenty
-zadeklarowane za pomocą \texttt{letatomic} są chronione w czasie wykonania tych
-funkcji przez muteksy.
+oferowanych przez język \textsc{Gordon}.
 
 \begin{verbatim}
 letatomic buffer = Array Int 10

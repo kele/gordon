@@ -59,14 +59,23 @@ jak i w statycznej analizie kodu będącej częścią kompilatora.
 tworzą oprogramowanie współbieżne. Są oni zaznajomieni z takimi pojęciami, jak
 wzajemne wykluczanie lub głodzenie.
 
-Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego języka programowania. Ze względu na prostotę języka \textsc{Gordon}, można się go nauczyć w bardzo krótkim czasie. Pozwoli to na korzystanie z kompilatora bez potrzeby wcześniejszych drogich i czasochłonnych szkoleń.
+Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego języka
+programowania. Ze względu na prostotę języka \textsc{Gordon}, można się go
+nauczyć w bardzo krótkim czasie. Pozwoli to na korzystanie z kompilatora bez
+potrzeby wcześniejszych drogich i czasochłonnych szkoleń.
 
-\textsc{Gordon} jest kompilatorem, który ma wspomagać pracę programisty w wykrywaniu zakleszczeń i innych problemów związanych z programowaniem współbieżnym. Od użytkowników nie wymaga się, aby znali formalne metody wykrywania wymienionych zagrożeń. Wszelkie komunikaty przedstawiane przez kompilator \textsc{Gordon} będą abstrahować od szczegółów implementacyjnych tego narzędzia.
+\textsc{Gordon} jest kompilatorem, który ma wspomagać pracę programisty w
+wykrywaniu zakleszczeń i innych problemów związanych z programowaniem
+współbieżnym. Od użytkowników nie wymaga się, aby znali formalne metody
+wykrywania wymienionych zagrożeń. Wszelkie komunikaty przedstawiane przez
+kompilator \textsc{Gordon} będą abstrahować od szczegółów implementacyjnych
+tego narzędzia.
 
 \subsection{Potrzeby użytkowników}
 \noindent Podstawowymi potrzebami użytkowników kompilatora \textsc{Gordon} są:
 \begin{itemize}
-\item wspomaganie podstawowych technik programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
+\item wspomaganie podstawowych technik programowania współbieżnego (wzajemne
+wykluczenia, pamięć dzielona itd.),
 \item wykrywanie potencjalnych zakleszczeń,
 \item czytelne i zwięzłe komunikaty,
 \item prosty język,
@@ -75,7 +84,8 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
 
 \section{Opis programu}
 \subsection{Zastosowania}
-\noindent Język \textsc{Gordon} jest narzędziem służącym do tworzenia oprogramowania wydajnego, współbieżnego oraz bezpiecznego. 
+\noindent Język \textsc{Gordon} jest narzędziem służącym do tworzenia
+oprogramowania wydajnego, współbieżnego oraz bezpiecznego. 
 \textsc{Gordon} został opracowany z myślą o:
 \begin{itemize}
     \item oprogramowaniu medycznym,
@@ -84,14 +94,20 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
 \end{itemize}
 
 \subsection{Pozycja na rynku}
-\noindent W chwili projektowania kompilatora języka \textsc{Gordon} na rynku dominowały następujące metody wytwarzania szybkiego i niezawodnego oprogramowania współbieżnego:
+\noindent W chwili projektowania kompilatora języka \textsc{Gordon} na rynku
+dominowały następujące metody wytwarzania szybkiego i niezawodnego
+oprogramowania współbieżnego:
 \begin{itemize}
-    \item \emph{Metoda wprawnego programisty} -- napisanie programu zleca się wprawnemu programiście języka \textsc{C}.
-    \item \emph{Metoda formalisty} -- dysponując modelem teoretycznym maszyny, odtwarzamy program z jego formalnej specyfikacji.
-    \item \emph{Pamięć transakcyjna} -- zastosowanie techniki programowania, która nie korzysta z muteksów i umożliwia unikanie zakleszczeń.
+    \item \emph{Metoda wprawnego programisty} -- napisanie programu zleca się
+    wprawnemu programiście języka \textsc{C}.
+    \item \emph{Metoda formalisty} -- dysponując modelem teoretycznym maszyny,
+    odtwarzamy program z jego formalnej specyfikacji.
+    \item \emph{Pamięć transakcyjna} -- zastosowanie techniki programowania,
+    która nie korzysta z muteksów i umożliwia unikanie zakleszczeń.
 \end{itemize}
 ~\\
-Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem tworzenia bezpiecznego oprogramowania współbieżnego.
+Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem tworzenia
+bezpiecznego oprogramowania współbieżnego.
 
 \section{Cechy programu}
 \noindent Podstawowymi cechami języka \textsc{Gordon} są:
@@ -99,21 +115,19 @@ Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem tworzenia b
 \item imperatywność,
 \item składnia wzorowana na języku Haskell,
 \item silne typy, statyczne wnioskowanie o typach,
-\item podstawowe konstrukcje programowania współbieżnego (wzajemne wykluczenia, pamięć dzielona itd.),
+\item podstawowe konstrukcje programowania współbieżnego (wzajemne wykluczenia,
+pamięć dzielona itd.),
 \item wykrywanie zakleszczeń na podstawie statycznej analizy kodu,
 \item generowanie kodu w języku C,
 \item przenośność.
 \end{itemize}
 
 \section{Dokumentacja}
-\subsection{Specyfikacja języka \textsc{Gordon}}
-\noindent Specyfikacja języka zawiera:
-\begin{itemize}
-\item gramatykę języka,
-\item opis typów oraz systemu typowania,
-\item semantykę konstrukcji używanych w języku,
-\item niezbędne szczegóły implementacyjne, które muszą być zachowane niezależnie od docelowej architektury.
-\end{itemize}
+\subsection{Język \textsc{Gordon}}
+\noindent Specyfikacja języka \textsc{Gordon} dostępna jest w oddzielnym
+dokumencie\footnote{Damian Bogel, Łukasz Dąbek, \emph{Język \textsc{Gordon}.}
+Wrocław, SPIO IIUWr 2014. }. Kompilator \textsc{Gordon} jest pełną
+implementacją tego języka.
 
 \subsection{Specyfikacja kompilatora \textsc{Gordon}}
 \noindent Specyfikacja kompilatora zawiera:
@@ -124,18 +138,23 @@ Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem tworzenia b
 
 \section{Wymagania}
 \subsection{Wymagania systemowe}
-\noindent System oparty na jądrze \textsc{Linux} udostępniający interfejs \textsc{pthreads} oraz kompilator języka C.
+\noindent System oparty na jądrze \textsc{Linux} udostępniający interfejs
+\textsc{pthreads} oraz kompilator języka C.
 
 \subsection{Wymagania sprzętowe}
 \noindent Takie same jak w wypadku dowolnego systemu opartego na jądrze
 \textsc{Linux}\footnote{Zob. \url{https://www.kernel.org}}.
 
 \subsection{Wymagania wydajnościowe}
-\noindent Wykrywanie zakleszczeń odbywa się na poziomie analizy kodu źródłowego, nie w trakcie wykonania programu. W związku z tym, nie powstaje żaden narzut wydajnościowy. Różnice między czasami wykonania programu napisanego w C, a kodem wygenerowanym przez kompilator \textsc{Gordon} powinny być niezauważalne (poniżej 2\%).
+\noindent Wykrywanie zakleszczeń odbywa się na poziomie analizy kodu
+źródłowego, nie w trakcie wykonania programu. W związku z tym, nie powstaje
+żaden narzut wydajnościowy. Różnice między czasami wykonania programu
+napisanego w C, a kodem wygenerowanym przez kompilator \textsc{Gordon} powinny
+być niezauważalne (poniżej 2\%).
 
 \section{Licencja}
 \noindent Kompilator języka \textsc{Gordon} jest objęty licencją GPL w wersji
-trzeciej. Jej pełna treść jest dostępna w oddzielnym
-dokumencie\footnote{Zob. \url{http://www.gnu.org/licenses/gpl-3.0.txt}}.
+trzeciej. Jej pełna treść jest dostępna w oddzielnym dokumencie\footnote{Zob.
+\url{http://www.gnu.org/licenses/gpl-3.0.txt}}.
 
 \end{document}

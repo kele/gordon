@@ -35,31 +35,35 @@ Wrocław 2014 \\[2.5cm]
 \newpage
 
 \section{Wstęp}
-\noindent Celem niniejszego dokumentu jest analiza przypadków użycia kompilatora
-języka \textsc{Gordon}. Analiza ta pozwoli na łatwiejsze weryfikowanie wymagań
-stawianych kompilatorowi w fazach specyfikacji, implementacji oraz testowania.
+\noindent Celem niniejszego dokumentu jest analiza przypadków użycia
+kompilatora języka \textsc{Gordon}. Analiza ta pozwoli na łatwiejsze
+weryfikowanie wymagań stawianych kompilatorowi w fazach specyfikacji,
+implementacji oraz testowania.
 
 \section{Wykaz przypadków użycia}
-\noindent Kompilator \textsc{Gordon} może być używany w następujących przypadkach użycia:
+\noindent Kompilator \textsc{Gordon} może być używany w następujących
+przypadkach użycia:
 \begin{itemize}
     \item kompilacja programu z pliku źródłowego do kodu maszynowego,
     \item podgląd wygenerowanego kodu pośredniego w języku \textsc{C},
     \item sprawdzenie poprawności typów w programie,
     \item sprawdzenie poprawności składniowej programu,
-    \item odczyt informacji modułu optymalizatora (dotyczących wykonanych optymalizacji),
-    \item sprawdzenie możliwości występowania zakleszczeń w programie (wraz z informacją
-        o śladzie wykonania prowadzącym do potencjalnego zakleszczenia),
+    \item odczyt informacji modułu optymalizatora (dotyczących wykonanych
+    optymalizacji),
+    \item sprawdzenie możliwości występowania zakleszczeń w programie (wraz z
+    informacją o śladzie wykonania prowadzącym do potencjalnego zakleszczenia),
     \item odczyt informacji o usuniętym martwym kodzie.
 \end{itemize}
 
 \section{Komentarz}
-\noindent Kompilator języka \textsc{Gordon}, jako produkt przeznaczony dla programistów, jest
-obsługiwany inaczej niż typowe aplikacje z graficznym interfejsem użytkownika.
-Kompilator nie jest programem interaktywnym -- po uruchomieniu kompilatora z
-odpowiednimi argumentami następuje wypisanie odpowiedzi na ekranie (m.in.
-informacji o sukcesie lub niepowodzeniu) i zakończenie programu.
+\noindent Kompilator języka \textsc{Gordon}, jako produkt przeznaczony dla
+programistów, jest obsługiwany inaczej niż typowe aplikacje z graficznym
+interfejsem użytkownika.  Kompilator nie jest programem interaktywnym -- po
+uruchomieniu kompilatora z odpowiednimi argumentami następuje wypisanie
+odpowiedzi na ekranie (m.in.  informacji o sukcesie lub niepowodzeniu) i
+zakończenie programu.
 
-Z tego powodu każdy przypadek użycia jest jednokrokowy -- wymusza to sama natura obsługi
-kompilatora.
+Z tego powodu każdy przypadek użycia jest jednokrokowy -- wymusza to sama
+natura obsługi kompilatora.
 
 \end{document}
