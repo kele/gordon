@@ -40,4 +40,49 @@ Wrocław 2013 \\[2.5cm]
 
 \section{Opisy konstrukcji językowych}
 
+\subsection{Przypisanie}
+Operator przypisania zmienia wartość zmiennej na wartość wyrażenia występującego
+po prawej stronie operatora. Przykład:
+\begin{verbatim}
+x := 34 * 12 + 7
+\end{verbatim}
+
+\subsection{Deklaracja lokalna}
+W języku \textsc{Gordon} zmienne lokalne deklaruje się przy użyciu słowa kluczoewgo
+\texttt{let}. Zmienna obejmuje swoim zasięgiem bieżący blok i jest niszczona po
+jego opuszczeniu. Przykład:
+
+\begin{verbatim}
+let x = 100
+let y = 2*x + 210
+
+z := x + x * y
+\end{verbatim}
+
+\subsection{Wyrażenie warunkowe}
+Wyrażenie warunkowe ma semantykę analogiczną do wyrażenia \texttt{if}
+w języku \textsc{C}. Podobnie, wyrażenie warunkowe może pominąć blok \texttt{else}.
+Przykład:
+
+\begin{verbatim}
+if x > 10
+  then x := x + 2
+  else x := x - 3
+
+if x != 100 && y != 200
+  then break
+\end{verbatim}
+
+\subsection{Pętla \texttt{while}}
+Pętla \texttt{while} (dopóki) ma semantykę analogiczną do pętli \texttt{while} w języku
+\textsc{C}. Przykład:
+
+\begin{verbatim}
+let y = 1
+while x > 0 do
+  y := y * x
+  x := x - 1
+\end{verbatim}
+
+
 \end{document}
