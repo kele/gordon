@@ -11,10 +11,9 @@
 \frenchspacing
 
 \renewcommand{\arraystretch}{1.5}
-%\renewcommand{\labelitemi}{}
-%\renewcommand{\labelitemii}{}
-%\renewcommand{\labelitemiii}{}
-%\renewcommand{\labelitemiv}{}
+\renewcommand{\labelitemi}{{\tiny$\bullet$}}
+\renewcommand{\labelitemii}{{\tiny$\bullet$}}
+\renewcommand{\labelitemiii}{{\tiny$\bullet$}}
 
 \usepackage{enumitem}
 \setlist[itemize]{leftmargin=1cm}
