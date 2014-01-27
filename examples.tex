@@ -1,0 +1,113 @@
+\documentclass{documentation}
+\usepackage{syntax}
+
+\begin{document}
+\begin{titlepage}
+\begin{center}
+Studencka Pracownia Inżynierii Oprogramowania\\
+Instytutu Informatyki Uniwersytetu Wrocławskiego\\[6cm]
+
+Damian Bogel, Łukasz Dąbek\\[1cm]
+\textsc{\LARGE Kompilator Języka Gordon}\\[0.5cm]
+\textsc{\large Przykładowe programy}
+
+\vfill
+Wrocław 2013 \\[2.5cm]
+
+\end{center}
+\end{titlepage}
+
+\newpage
+\begin{table}
+	\centering
+    \captionsetup{name=Tabela}
+	\caption{Historia zmian w dokumencie}
+		\begin{tabular}{|r|c|c|l|l|}
+		\hline
+		Lp.  & Data       & Nr wersji & Autor                 & Zmiana \\ \hline
+		1.   & 2014-01-10 & 0.01 & Damian Bogel & Utworzenie dokumentu \\ \hline
+	\end{tabular}
+\end{table}
+\newpage
+
+\tableofcontents
+\setcounter{page}{2}
+
+\newpage
+
+\section{Przykłady}
+\noindent W kolejnych podrozdziałach przedstawione zostały przykładowe programy
+napisane w języku \textsc{Gordon}.
+
+\subsection{Liczby fibonacciego}
+\noindent Poniższy program przedstawia funkcję, która oblicza czterdziestą
+liczbę Fibonacciego.
+
+\begin{verbatim}
+let fib n = 
+    fib (n - 1) + fib (n - 2)
+
+fib 40
+\end{verbatim}
+
+\subsection{Uruchamianie wątków}
+\noindent W nowym wątku można uruchomić dowolne wyrażenie poprzedzając je słowem kluczowym
+\texttt{go}. Po wykonaniu poniższego programu, zmienna \texttt{x} może mieć wartość 2 lub 3.
+
+\begin{verbatim}
+let x = 0
+go (x := 2)
+go (x := 3)
+\end{verbatim}
+
+
+\subsection{Problem producentów i konsumentów}
+\noindent Rozwiązanie klasycznego problemu za pomocą mechanizmów synchronizacji
+oferowanych przez język \textsc{Gordon}. Funkcje \texttt{try\_read} oraz
+\texttt{try\_write} są zadeklarowane jako atomowe. Oznacza to, że ich argumenty
+zadeklarowane za pomocą \texttt{letatomic} są chronione w czasie wykonania tych
+funkcji przez muteksy.
+
+\begin{verbatim}
+letatomic buffer = Array Int 10
+letatomic buf_count = 0
+letatomic index = 0
+
+let read buffer buf_count index = 
+    let val = Int
+
+    letatomic try_read =
+        if buf_count > 0
+        then
+            buf_count = buf_count - 1
+            val := buffer[index]
+            index = (index + 1) mod 10
+            return true
+        else
+            return false
+        
+    while call try_read == false do
+        continue
+
+let write buffer buf_count index val =
+    letatomic try_write =
+        if buf_count < 10
+        then
+            buffer[(index + buf_count) mod 10] := val
+            buf_count := buf_count + 1
+            return true
+        else
+            return false
+
+    while call try_write == false do
+        continue
+
+\end{verbatim}
+
+
+\begin{verbatim}
+
+\end{verbatim}
+
+
+\end{document}

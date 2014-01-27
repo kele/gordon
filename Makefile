@@ -1,7 +1,10 @@
-all: architecture.pdf dictionary.pdf vision.pdf costs.pdf schedule.pdf usecases.pdf tests.pdf language.pdf kele_language.pdf index.pdf grammar.pdf
+all: architecture.pdf dictionary.pdf vision.pdf costs.pdf schedule.pdf usecases.pdf tests.pdf language.pdf kele_language.pdf index.pdf grammar.pdf examples.pdf
 
 dictionary.pdf : dictionary.tex documentation.cls
 	xelatex dictionary.tex && xelatex dictionary.tex
+
+examples.pdf : examples.tex documentation.cls
+	xelatex examples.tex && xelatex examples.tex
 
 architecture.pdf : architecture.tex documentation.cls
 	xelatex architecture.tex && xelatex architecture.tex
