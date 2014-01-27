@@ -1,4 +1,4 @@
-all: architecture.pdf dictionary.pdf vision.pdf costs.pdf schedule.pdf usecases.pdf tests.pdf
+all: architecture.pdf dictionary.pdf vision.pdf costs.pdf schedule.pdf usecases.pdf tests.pdf language.pdf
 
 dictionary.pdf : dictionary.tex documentation.cls
 	xelatex dictionary.tex && xelatex dictionary.tex
@@ -20,6 +20,9 @@ usecases.pdf : usecases.tex documentation.cls
 
 tests.pdf : tests.tex documentation.cls
 	xelatex tests.tex && xelatex tests.tex
+
+language.pdf : language.tex documentation.cls
+	xelatex language.tex && xelatex language.tex
 
 clean :
 	-rm *.aux *.log *.nav *.out *.snm *.pdf *.toc *.vrb
