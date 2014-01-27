@@ -84,20 +84,43 @@ while x > 0 do
   x := x - 1
 \end{verbatim}
 
+\subsection{Pętla \texttt{for}}
+Pętla \texttt{for} w języku \textsc{Gordon} jest lukrem syntaktycznym. Schemat tłumaczenia:
+
+\begin{verbatim}
+for x in e1 to e2 do e
+=
+let x = e1
+while x <= e2 do
+  e
+  x := x + 1
+\end{verbatim}
+
 \subsection{Wołanie funkcji}
-Aby wywołać funkcję należy jej nazwę poprzedzić słowem kluczowym \texttt{call} a na końcu
-dodać listę wyrażeń do przekazania jako agrumenty dla funkcji. Wartością całego wyrażenia
-będzie wartość zwrócona przez funkcję.
+Aby wywołać funkcję należy po jej nazwie dodać listę wyrażeń do przekazania jako agrumenty dla funkcji.
+Wartością całego wyrażenia będzie wartość zwrócona przez funkcję.
 Przykład:
 
 \begin{verbatim}
 let fac n =
   if n < 2
     then 1
-    else n * call fac (n-1)
+    else n * fac (n-1)
 
 let newton n k =
-  call fac n / (call fac k * call fac (n-k))
+  fac n / (fac k * fac (n-k))
+\end{verbatim}
+
+\subsection{Instrukcje \texttt{break} i \texttt{continue}}
+Słowa kluczowe \texttt{break} i \texttt{continue} mogą występować jedynie w pętlach
+\texttt{while} i \texttt{for}. Ich semantyka jest analogiczna do semantyki tych samych
+instrukcji w języku \textsc{C}: \texttt{break} przerywa działanie pętli a \texttt{continue}
+natychmiast przechodzi do kolejnego obrotu pętli. Przykład:
+
+\begin{verbatim}
+while true do
+  x := x - 1
+  if x == 0 then break
 \end{verbatim}
 
 \end{document}
