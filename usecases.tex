@@ -37,26 +37,27 @@ Wrocław 2013 \\[2.5cm]
 \section{Wstęp}
 \noindent Celem niniejszego dokumentu jest analiza przypadków użycia kompilatora
 języka \textsc{Gordon}. Analiza ta pozwoli na łatwiejsze weryfikowanie wymagań
-stawianych produktowi w fazach specyfikacji, implementacji oraz testowania.
+stawianych kompilatorowi w fazach specyfikacji, implementacji oraz testowania.
 
-\section{Analiza przypadków użycia}
+\section{Wykaz przypadków użycia}
+\noindent Kompilator \textsc{Gordon} może być używany w następujących przypadkach użycia:
 \begin{itemize}
-    \item Kompilacja programu z pliku źródłowego do kodu maszynowego.
-    \item Podgląd wygenerowanego kodu pośredniego w języku \textsc{C}.
-    \item Sprawdzenie poprawności typów w programie.
-    \item Sprawdzenie poprawności składniowej programu.
-    \item Odczyt informacji modułu optymalizatora (dotyczących wykonanych optymalizacji).
-    \item Sprawdzenie możliwości występowania zakleszczeń w programie (wraz z informacją
-        o śladzie wykonania prowadzącym do potencjalnego zakleszczenia).
-    \item Odczyt informacji o usuniętym martwym kodzie. 
+    \item kompilacja programu z pliku źródłowego do kodu maszynowego,
+    \item podgląd wygenerowanego kodu pośredniego w języku \textsc{C},
+    \item sprawdzenie poprawności typów w programie,
+    \item sprawdzenie poprawności składniowej programu,
+    \item odczyt informacji modułu optymalizatora (dotyczących wykonanych optymalizacji),
+    \item sprawdzenie możliwości występowania zakleszczeń w programie (wraz z informacją
+        o śladzie wykonania prowadzącym do potencjalnego zakleszczenia),
+    \item odczyt informacji o usuniętym martwym kodzie.
 \end{itemize}
 
 \section{Komentarz}
 \noindent Kompilator języka \textsc{Gordon}, jako produkt przeznaczony dla programistów, jest
-obsługiwany inaczej niż standardowe aplikacje z graficznym interfejsem użytkownika. Kompilator
-jest nie programem interaktywnym -- po uruchomieniu kompilatora z odpowiednimi argumentami
-następuje wypisanie odpowiedzi na ekran (m.in. informacji o sukcesie lub porażce) i zakończenie
-programu.
+obsługiwany inaczej niż typowe aplikacje z graficznym interfejsem użytkownika.
+Kompilator nie jest programem interaktywnym -- po uruchomieniu kompilatora z
+odpowiednimi argumentami następuje wypisanie odpowiedzi na ekranie (m.in.
+informacji o sukcesie lub niepowodzeniu) i zakończenie programu.
 
 Z tego powodu każdy przypadek użycia jest jednokrokowy -- wymusza to sama natura obsługi
 kompilatora.

@@ -45,7 +45,7 @@ prim_type ::=
     | Int 
     | Bool 
     | Char 
-    | Array type num
+    | Array type positive_num
     | Ptr type 
     | Func list(type) -> type
 

@@ -36,7 +36,7 @@ Wrocław 2013 \\[2.5cm]
 \newpage
 
 \section{Wstęp}
-\noindent Dokument ten zawiera plan testowania kompilatora języka
+\noindent Dokument zawiera plan testowania kompilatora języka
 \textsc{Gordon}.
 
 \section{Uwagi ogólne}
@@ -47,8 +47,8 @@ zautomatyzowane. Po ukończeniu każdej z faz, program zostaje sprawdzony przy
 ich użyciu.
 
 \section{Główny program testujący}
-\noindent Równolegle z implementacją kompilatora, tworzony jest główny program
-testowy, w którym użyte zostają wszystkie konstrukcje języka \textsc{Gordon}.
+\noindent Równolegle z implementacją kompilatora, jest tworzony główny program
+testowy, w~ którym użyte zostają wszystkie konstrukcje języka \textsc{Gordon}.
 Jego objętość i złożoność jest wystarczająco duża, aby mógł być potraktowany
 jako wyznacznik poprawności implementacji kompilatora. Powstaje on w iteracjach,
 co umożliwia testowanie jego kolejnych wersji. Niedopuszczalne są
@@ -57,7 +57,7 @@ jakiekolwiek (nawet najmniejsze) niezgodności tego programu ze specyfikacją.
 \section{Testy analizatora leksykalnego i analizatora składniowego [G]}
 \noindent Przygotowanych zostaje kilkanaście programów, w których użyte
 zostają wszystkie konstrukcje języka \textsc{Gordon}. W tej fazie dopuszczalne
-są także kody źródłowe, w których wnioskowanie o typach nie może się powieść.
+są także kody źródłowe, w~ których wnioskowanie o typach nie może się powieść.
 Moduł [G] musi je jednak przyjąć jako poprawne wejście.
 
 \section{Testy modułu wnioskującego o typach [O1]}
@@ -72,12 +72,12 @@ zostaje umieszczony kod, który nigdy się nie wykona. Moduł [R] powinien
 wyeliminować taki kod.
 
 \section{Testy modułu wykrywającego zakleszczenia [D]}
-\noindent Prototypy istniejącego wolnego oprogramowania korzystającego z
+\noindent Uproszczone wersje istniejącego oprogramowania korzystajacego z
 wielowątkowości zostają utworzone w języku \textsc{Gordon} i przekazane do
 modułu [D]. Każde wykryte zakleszczenie zostaje wnikliwie sprawdzone przez
 programistów, celem ustalenia poprawności działania modułu.
 
-Oprócz tego, zostaje utworzonych kilka programów, o których wiadomo, że może w
+Oprócz tego zostaje utworzonych kilka programów, o których wiadomo, że może w
 nich wystąpić zakleszczenie. Moduł [D] powinien wykryć każde z nich.
 
 \section{Testy modułu optymalizującego [O2]}

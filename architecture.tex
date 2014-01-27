@@ -36,12 +36,12 @@ Wrocław 2013 \\[2.5cm]
 \newpage
 
 \section{Wstęp}
-\noindent Niniejszy dokument określi architekturę kompilatora języka \textsc{Gordon}. Mimo, że
-w trakcie implementacji pewne szczegóły mogą ulec zmianie, główna idea pozostanie
-niezmieniona.
+\noindent Niniejszy dokument określa architekturę kompilatora języka
+\textsc{Gordon}.
 
 \section{Opis ogólnej architektury kompilatora}
-\noindent Kompilator języka \textsc{Gordon} przetwarza plik wejściowy w następujących fazach:
+\noindent Kompilator języka \textsc{Gordon} przetwarza plik wejściowy w
+następujących fazach:
 \begin{itemize}
     \item analiza leksykalna i składniowa [G],
     \item wnioskowanie o typach [O1],
@@ -53,13 +53,13 @@ niezmieniona.
 W nawiasach kwadratowych podano nazwy poszczególnych modułów.
 
 \subsection{Analiza leksykalna [G]}
-\noindent Kod analizatora leksykalnego jest generowany przy użyciu narzędzia \textsc{Flex}. Nietypową
-częścią leksera jest uwzględnianie znaków niewidocznych w kodzie źródłowym jako
-symboli znaczących, ponieważ struktura blokowa języka \textsc{Gordon} jest
-zdefiniowana przez poziomy wcięć.  
+\noindent Kod analizatora leksykalnego jest generowany za pomocą narzędzia
+\textsc{Flex}. Nietypową częścią leksera jest uwzględnianie znaków
+niewidocznych w kodzie źródłowym jako symboli znaczących, ponieważ struktura
+blokowa języka \textsc{Gordon} jest zdefiniowana przez poziomy wcięć.  
 
 \subsection{Analiza składniowa [G]}
-\noindent Kod analizatora składniowego jest generowany przy użyciu narzędzia
+\noindent Kod analizatora składniowego jest generowany za pomocą narzędzia
 \textsc{Bison}.  Wynikiem działania modułu jest abstrakcyjne drzewo wyrażenia
 reprezentujące program wejściowy.  Następne fazy modyfikują to drzewo lub
 uzupełniają je o dodatkowe informacje.
@@ -72,9 +72,10 @@ danej zmiennej. Następnie sprawdzana jest poprawność adnotacji dotyczących
 typów względem rzeczywistego użycia zmiennych w programie.
 
 \subsection{Eliminacja martwego kodu [R]}
-\noindent Moduł eliminający martwy kod służy do zmniejszenia rozmiaru pliku wynikowego
-przez usunięcie kodu, który nie jest wywoływany w toku wykonania programu.
-Po wykryciu martwego kodu zostanie wypisane stosowne ostrzeżenie dla programisty.
+\noindent Moduł eliminający martwy kod służy do zmniejszenia rozmiaru pliku
+wynikowego przez usunięcie kodu, który nie jest wywoływany w toku wykonania
+programu.  Po wykryciu martwego kodu zostanie wypisane stosowne ostrzeżenie dla
+programisty.
 
 \subsection{Wykrywanie zakleszczeń [D]} \noindent Moduł służący do wykrywania
 zakleszczeń jest najbardziej skomplikowaną częścią projektu kompilatora języka
@@ -83,14 +84,15 @@ obecności lub braku zakleszczeń w kompilowanym programie, zostanie zgłoszony
 błąd (opcja domyślna) lub ostrzeżenie.
 
 Dodatkowo, gdy moduł wykryje możliwość zakleszczenia, w niektórych przypadkach
-zostanie przedstawiony możliwy ślad wykonania prowadzący do zakleszczenia. 
+zostanie przedstawiony ślad wykonania, który może prowadzić do zakleszczenia. 
 
 \subsection{Optymalizacja [O2]}
-\noindent Optymalizacje wykonywane przez kompilator korzystają z dodatkowych informacji
-niesionych przez typy języka \textsc{Gordon}, które są bardziej ekspresywne niż typy języka
-wynikowego.
-Optymalizacje niskopoziomowe (czyli korzystające ze szczegółów architektury docelowej) nie
-są częścią modułu optymalizatora -- zadanie to zostanie oddelegowane do kompilatora języka \textsc{C}.
+\noindent Optymalizacje są wykonywane przez kompilator na podstawie z
+dodatkowych informacji niesionych przez typy języka \textsc{Gordon}, które są
+bardziej ekspresywne niż typy języka wynikowego. Optymalizacje niskopoziomowe
+(czyli korzystające ze szczegółów architektury docelowej) nie są częścią modułu
+optymalizatora -- zadanie to zostanie oddelegowane do kompilatora języka
+\textsc{C}.
 
 \subsection{Generowanie kodu wynikowego [N]}
 \noindent Generowanie kodu wynikowego jest ostatnią fazą kompilacji. Podczas tej
@@ -111,16 +113,16 @@ decyzji możliwe jest zmniejszenie liczby błędów w kodzie korzystając ze
 statycznego wymuszania niezmienników na poziomie typów.
 
 \subsection{Wybór języka docelowego}
-\noindent Język \textsc{C} został wybrany jako język docelowy kompilacji z kilku względów:
+\noindent Język \textsc{C} został wybrany jako język docelowy kompilacji z dwu względów:
 \begin{itemize}
-    \item dostępność kompilatorów języka \textsc{C} na wielu platformach,
-    \item możliwość wykorzystania istniejących, sprawdzonych narzędzi (konsolidatory,
+    \item dostępności kompilatorów języka \textsc{C} na wielu platformach,
+    \item możliwości wykorzystania istniejących, sprawdzonych narzędzi (konsolidatory,
         optymalizatory).
 \end{itemize}
 
 \pagebreak
 \subsection{Podział kompilacji na fazy}
-\noindent Zysk z podziału kompilacji na fazy:
+\noindent Z podziału kompilacji na fazy wynikają następujące korzyści:
 \begin{itemize}
     \item modularyzacja kodu, a dzięki temu możliwość łatwej rozbudowy,
     \item łatwość oddzielnego testowania faz.

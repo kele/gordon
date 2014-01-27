@@ -37,15 +37,27 @@ Wrocław 2013 \\[2.5cm]
 
 \section{Wprowadzenie}
 \subsection{Wstęp}
-\noindent Niniejszy dokument ma na celu określenie przeznaczenia programu \textsc{Gordon} oraz wyspecyfikowanie stawianych przed nim wymagań.
+\noindent Niniejszy dokument ma na celu określenie przeznaczenia programu
+\textsc{Gordon} oraz wyspecyfikowanie stawianych przed nim wymagań.
 
 \subsection{Ogólny opis programu \textsc{Gordon}}
-\noindent Program \textsc{Gordon} jest kompilatorem imperatywnego języka programowania o składni podobnej do języka Haskell, którego główną własnością są konstrukcje pozwalające na wykrywanie zakleszczeń. Język ten także nazywa się \textsc{Gordon}.
+\noindent Program \textsc{Gordon} jest kompilatorem imperatywnego języka
+programowania o składni podobnej do języka Haskell, którego główną własnością
+są konstrukcje umożliwiające wykrywanie zakleszczeń. Język ten także nazywa się
+\textsc{Gordon}.
 
-Celem \textsc{Gordona} jest ułatwienie pracy programistom tworzącym oprogramowanie współbieżne. Ponieważ praktyka pokazuje, że napisanie poprawnego programu współbieżnego (tj. wolnego od zakleszczeń, zagłodzenia) jest zadaniem trudnym, projekt \textsc{Gordon} uwzględnia szereg usprawnień wspomagających programistę. Usprawnienia te znajdują się zarówno w samej konstrukcji języka, jak i w statycznej analizie kodu będącej częścią kompilatora.
+Celem \textsc{Gordona} jest ułatwienie pracy programistom tworzącym
+oprogramowanie współbieżne. Ponieważ praktyka pokazuje, że napisanie poprawnego
+programu współbieżnego (tj. wolnego od zakleszczeń, głodzenia) jest zadaniem
+trudnym, projekt \textsc{Gordon} uwzględnia szereg usprawnień wspomagających
+programistę. Usprawnienia te znajdują się zarówno w samej konstrukcji języka,
+jak i w statycznej analizie kodu będącej częścią kompilatora.
+
 \section{Grupa docelowa}
 \subsection{Opis użytkowników}
-\noindent Użytkownikami kompilatora \textsc{Gordon} są programiści, którzy tworzą oprogramowanie współbieżne. Są oni zaznajomieni z takimi pojęciami, jak wzajemne wykluczanie lub zagłodzenie.
+\noindent Użytkownikami kompilatora \textsc{Gordon} są programiści, którzy
+tworzą oprogramowanie współbieżne. Są oni zaznajomieni z takimi pojęciami, jak
+wzajemne wykluczanie lub głodzenie.
 
 Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego języka programowania. Ze względu na prostotę języka \textsc{Gordon}, można się go nauczyć w bardzo krótkim czasie. Pozwoli to na korzystanie z kompilatora bez potrzeby wcześniejszych drogich i czasochłonnych szkoleń.
 
@@ -75,7 +87,7 @@ Od użytkowników wymaga się znajomości przynajmniej jednego imperatywnego ję
 \noindent W chwili projektowania kompilatora języka \textsc{Gordon} na rynku dominowały następujące metody wytwarzania szybkiego i niezawodnego oprogramowania współbieżnego:
 \begin{itemize}
     \item \emph{Metoda wprawnego programisty} -- napisanie programu zleca się wprawnemu programiście języka \textsc{C}.
-    \item \emph{Metoda formalisty} -- dysponując modelem teoretycznym, maszyny odtwarzamy program z jego formalnej specyfikacji.
+    \item \emph{Metoda formalisty} -- dysponując modelem teoretycznym maszyny, odtwarzamy program z jego formalnej specyfikacji.
     \item \emph{Pamięć transakcyjna} -- zastosowanie techniki programowania, która nie korzysta z muteksów i umożliwia unikanie zakleszczeń.
 \end{itemize}
 ~\\
@@ -116,12 +128,14 @@ Język \textsc{Gordon} ma szansę stać się praktycznym narzędziem tworzenia b
 
 \subsection{Wymagania sprzętowe}
 \noindent Takie same jak w wypadku dowolnego systemu opartego na jądrze
-\textsc{Linux}\footnote{\url{https://www.kernel.org}}.
+\textsc{Linux}\footnote{Zob. \url{https://www.kernel.org}}.
 
 \subsection{Wymagania wydajnościowe}
 \noindent Wykrywanie zakleszczeń odbywa się na poziomie analizy kodu źródłowego, nie w trakcie wykonania programu. W związku z tym, nie powstaje żaden narzut wydajnościowy. Różnice między czasami wykonania programu napisanego w C, a kodem wygenerowanym przez kompilator \textsc{Gordon} powinny być niezauważalne (poniżej 2\%).
 
 \section{Licencja}
-\noindent Kompilator języka \textsc{Gordon} jest objęty licencją GPL w wersji trzeciej. Jej pełna treść jest dostępna w oddzielnym dokumencie\footnote{\url{http://www.gnu.org/licenses/gpl-3.0.txt}}.
+\noindent Kompilator języka \textsc{Gordon} jest objęty licencją GPL w wersji
+trzeciej. Jej pełna treść jest dostępna w oddzielnym
+dokumencie\footnote{Zob. \url{http://www.gnu.org/licenses/gpl-3.0.txt}}.
 
 \end{document}
