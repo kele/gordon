@@ -84,5 +84,20 @@ while x > 0 do
   x := x - 1
 \end{verbatim}
 
+\subsection{Wołanie funkcji}
+Aby wywołać funkcję należy jej nazwę poprzedzić słowem kluczowym \texttt{call} a na końcu
+dodać listę wyrażeń do przekazania jako agrumenty dla funkcji. Wartością całego wyrażenia
+będzie wartość zwrócona przez funkcję.
+Przykład:
+
+\begin{verbatim}
+let fac n =
+  if n < 2
+    then 1
+    else n * call fac (n-1)
+
+let newton n k =
+  call fac n / (call fac k * call fac (n-k))
+\end{verbatim}
 
 \end{document}
