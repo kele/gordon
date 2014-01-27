@@ -77,8 +77,6 @@ Wrocław 2013 \\[2.5cm]
 \alt `continue'
 \alt <literal>
 
-<call> ::= <ident> <expr-list>
-
 <prim-type> ::= `Int'
 \alt `Bool'
 \alt `Char'
@@ -86,8 +84,8 @@ Wrocław 2013 \\[2.5cm]
 \alt `Ptr' <type>
 \alt `Func' <type-list> `-\>' <type>
 
-<arg-list> ::= <arg>
-\alt <arg> <arg-list>
+<arg-list> ::= <expr>
+\alt <expr> <arg-list>
 
 <decl-list> ::= <decl>
 \alt <decl>`,' <decl-list>
